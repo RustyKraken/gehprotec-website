@@ -80,16 +80,11 @@
   letter-spacing: -.02em;
 }
 .gp-lp-intro_text {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 2.5rem;
-}
-.gp-lp-intro_text p {
-  margin: 0;
-  color: var(--svc-muted);
-  font-size: 1.0625rem;
-  line-height: 1.7;
+  max-width: 40rem;
+  margin: 2rem 0 0;
+  color: var(--svc-ink);
+  font-size: 1.1875rem;
+  line-height: 1.65;
 }
 
 /* Abschnitte */
@@ -489,9 +484,8 @@
     padding: 5rem 0 1rem;
   }
   .gp-lp-intro_text {
-    grid-template-columns: 1fr;
-    gap: 1rem;
     margin-top: 1.5rem;
+    font-size: 1.0625rem;
   }
   .gp-svc-section {
     padding: 4rem 0;

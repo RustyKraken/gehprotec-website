@@ -15,7 +15,7 @@
   <link href="../css/normalize.css" rel="stylesheet" type="text/css">
   <link href="../css/webflow.css" rel="stylesheet" type="text/css">
   <link href="../css/gehprotec.webflow.css?v=16" rel="stylesheet" type="text/css">
-  <link href="../css/gp-leistung.css?v=5" rel="stylesheet" type="text/css">
+  <link href="../css/gp-leistung.css?v=6" rel="stylesheet" type="text/css">
   <style>@media not all and (max-width: 479px) and (min-width: 0px){@media not all and (max-width: 767px) and (min-width: 480px){@media not all and (max-width: 991px) and (min-width: 768px){html.w-mod-js:not(.w-mod-ix3) :is(:is(.leistung-box, .leistung-box) .leistung-arrow) {visibility: hidden !important;}}}}</style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -128,10 +128,7 @@
         <div class="gp-about_label">Worum es geht</div>
         <div>
           <p class="gp-about_lead">Ob Oberschenkel- oder Unterschenkelamputation: Wir fertigen Beinprothesen, die exakt auf Ihren Körper, Ihre Ziele und Ihren Alltag abgestimmt sind.</p>
-          <div class="gp-lp-intro_text">
-          <p>Für Oberschenkelamputationen setzen wir unter anderem auf das Genium-System. Sensoren und Mikroprozessor passen das Kniegelenk laufend an Tempo und Untergrund an – für einen nahezu natürlichen Gang auf Ebenen, Rampen und Treppen.</p>
-          <p>Bei Unterschenkelamputationen sorgen individuell gefertigte Silikon-Liner für Halt und Druckentlastung, auch bei Narben oder besonderen Stumpfformen. Auch Kinder versorgen wir mit maßgeschneiderten Prothesen.</p>
-          </div>
+          <p class="gp-lp-intro_text">Für Oberschenkelamputationen setzen wir unter anderem auf das Genium-System, das sich laufend an Tempo und Untergrund anpasst – für einen nahezu natürlichen Gang auf Ebenen, Rampen und Treppen. Bei Unterschenkelamputationen sorgen individuell gefertigte Silikon-Liner für Halt und Druckentlastung, auch bei Narben oder besonderen Stumpfformen.</p>
         </div>
       </div>
     </section>
@@ -299,6 +296,28 @@
       </div>
     </section>
   </main>
+  <section id="anfrage" class="section">
+    <div class="padding">
+      <div class="w-layout-blockcontainer container w-container">
+        <div class="contact-wrapper">
+          <div class="contact-left">
+            <h2 class="h2">Jetzt <em>anfragen</em></h2>
+            <div class="text line-height-big">Egal, ob Sie bereits Ihren ersten Termin vereinbaren möchten oder einfach nur Fragen haben.</div>
+            <div class="w-form">
+              <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form" data-wf-page-id="69b931d02662c665650ac4b9" data-wf-element-id="40927a6a-a46e-4820-2578-7f9b78486275"><input class="form-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Name" type="text" id="name"><input class="form-field w-input" maxlength="256" name="email" data-name="Email" placeholder="Email" type="email" id="email" required=""><input class="form-field w-input" maxlength="256" name="Telefonnummer" data-name="Telefonnummer" placeholder="Telefonnummer" type="tel" id="Telefonnummer" required=""><textarea id="Nachricht" name="Nachricht" maxlength="5000" data-name="Nachricht" placeholder="Nachricht" class="form-field field w-input"></textarea><input type="submit" data-wait="Bitte warten..." class="cta-button form-submit w-button" value="Absenden"></form>
+              <div class="w-form-done">
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+              <div class="w-form-fail">
+                <div>Oops! Something went wrong while submitting the form.</div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-right"><img loading="lazy" src="../images/Rectangle5.avif" alt="GehProTec Kontakt" class="image-full"></div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="gp-cta">
     <div class="gp-cta_card">
       <div class="gp-cta_content">
@@ -383,7 +402,7 @@
   <script src="../js/webflow.js" type="text/javascript"></script>
   <script src="https://cdn.prod.website-files.com/gsap/3.15.0/gsap.min.js" type="text/javascript"></script>
   <script src="https://cdn.prod.website-files.com/gsap/3.15.0/ScrollTrigger.min.js" type="text/javascript"></script>
-  <script src="../js/gp-scroll.js?v=7" type="text/javascript"></script>
+  <script src="../js/gp-scroll.js?v=8" type="text/javascript"></script>
   <script>
 (function() {
   var link = document.getElementById("kontakt-link");

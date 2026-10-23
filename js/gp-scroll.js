@@ -20,7 +20,7 @@
     ".gp-about_feature-card",
     ".gp-about_stat",
     // Leistungsseiten
-    ".gp-lp-intro .gp-about_lead, .gp-lp-intro_text p",
+    ".gp-lp-intro .gp-about_lead, .gp-lp-intro_text",
     ".gp-svc_head--row > *",
     ".gp-svc-step",
     ".gp-svc-bento_item",
