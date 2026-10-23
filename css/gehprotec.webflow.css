@@ -2633,3 +2633,12 @@ body {
     min-height: 100%;
   }
 }
+
+/* Team-Karten auf Mobile sofort zeigen – nicht erst beim Weiterscrollen einblenden */
+@media screen and (max-width: 767px) {
+  .gpts-card {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+}
