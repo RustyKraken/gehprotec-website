@@ -1219,17 +1219,6 @@ window.addEventListener("load", function () {
     var prev = section.querySelector(".gpts-prev");
     var next = section.querySelector(".gpts-next");
     var pagination = section.querySelector(".gpts-pagination");
-    function setMobileEndOffset(swiper) {
-      var lastSlide = swiper.slides[swiper.slides.length - 1];
-      if (!lastSlide) return;
-      swiper.params.slidesOffsetAfter =
-        window.innerWidth <= 767
-          ? Math.max(16, swiper.width - lastSlide.offsetWidth)
-          : 0;
-      swiper.updateSlides();
-      swiper.updateProgress();
-      swiper.updateSlidesClasses();
-    }
     new Swiper(root, {
   wrapperClass: "gpts-track",
   slideClass: "gpts-slide",
@@ -1241,13 +1230,7 @@ window.addEventListener("load", function () {
   slidesPerView: "auto",
   spaceBetween: 12,
   grabCursor: true,
-  centeredSlides: true,
   watchOverflow: true,
-  breakpoints: {
-    768: {
-      centeredSlides: false
-    }
-  },
   navigation: {
     nextEl: next,
     prevEl: prev
