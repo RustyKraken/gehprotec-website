@@ -1,0 +1,511 @@
+/* Gemeinsamer Aufbau aller Leistungsseiten:
+   Hero (wie Infos) → Bild → Intro → Schritte → Bento → Kundenstimme → FAQ */
+.gp-lp {
+  --svc-ink: #17141f;
+  --svc-muted: #6b6578;
+  --svc-line: #e9e6ef;
+  --svc-tint: #f4f1fb;
+  color: var(--svc-ink);
+}
+
+/* Hero – identisch zur Infos-Seite */
+.gp-about_inner {
+  width: 90%;
+  max-width: 76rem;
+  margin: 0 auto;
+}
+.gp-about-hero {
+  padding-top: 7rem;
+}
+.gp-about_hero-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 3rem;
+}
+.gp-about_title {
+  margin: 0;
+  color: var(--black);
+  font-size: var(--fs-h1);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+.gp-lp-hero_aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.75rem;
+  max-width: 26rem;
+}
+.gp-about_intro {
+  margin: 0;
+  color: var(--gray);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.gp-about_hero-media {
+  margin-top: 5rem;
+  overflow: hidden;
+  border-radius: 24px;
+  aspect-ratio: 16 / 7;
+}
+.gp-about_hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Intro – wie „Geschichte“ auf der Infos-Seite */
+.gp-lp-intro {
+  padding: 8rem 0 2rem;
+}
+.gp-about_split {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 2rem;
+}
+.gp-about_label {
+  color: var(--black);
+  font-size: .9375rem;
+  font-weight: 500;
+}
+.gp-about_lead {
+  margin: 0;
+  color: var(--black);
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -.02em;
+}
+.gp-lp-intro_text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.gp-lp-intro_text p {
+  margin: 0;
+  color: var(--svc-muted);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+/* Abschnitte */
+.gp-svc_inner {
+  width: 90%;
+  max-width: 76rem;
+  margin: 0 auto;
+}
+.gp-svc-section {
+  padding: 7rem 0;
+}
+.gp-svc-section--tight {
+  padding: 0 0 7rem;
+}
+.gp-svc_eyebrow {
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.gp-svc_h2 {
+  margin: 0;
+  color: var(--svc-ink);
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+}
+.gp-svc_text {
+  margin: 0;
+  color: var(--svc-muted);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+.gp-svc_head--row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+.gp-svc_head--row .gp-svc_h2 {
+  max-width: 34rem;
+}
+.gp-svc_head-aside {
+  max-width: 24rem;
+}
+
+/* Schritte */
+.gp-svc-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.gp-svc-step {
+  position: relative;
+  padding-top: 2rem;
+  border-top: 2px solid var(--svc-line);
+}
+.gp-svc-step::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 3rem;
+  height: 2px;
+  background-color: var(--primary);
+}
+.gp-svc-step_num {
+  color: var(--primary);
+  font-size: .9375rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.gp-svc-step h3 {
+  margin: 1.25rem 0 .625rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+.gp-svc-step p {
+  margin: 0;
+  color: var(--svc-muted);
+  font-size: .9375rem;
+  line-height: 1.6;
+}
+
+/* Bento */
+.gp-svc-bento {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.25rem;
+}
+.gp-svc-bento_item {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 24px;
+}
+.gp-svc-bento_item--large {
+  grid-row: span 2;
+  min-height: 34rem;
+}
+.gp-svc-bento_item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s cubic-bezier(.22, 1, .36, 1);
+}
+.gp-svc-bento_item:hover img {
+  transform: scale(1.03);
+}
+.gp-svc-bento_item:not(.gp-svc-bento_item--note) {
+  min-height: 18rem;
+}
+.gp-svc-bento_item figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 4rem 1.75rem 1.75rem;
+  background: linear-gradient(180deg, transparent, rgba(14, 10, 26, .78));
+  color: rgba(255, 255, 255, .85);
+  text-align: left;
+  font-size: .9375rem;
+  line-height: 1.55;
+}
+.gp-svc-bento_item figcaption strong {
+  display: block;
+  margin-bottom: .25rem;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.gp-svc-bento_item--note {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem 1.75rem;
+  background-color: var(--primary);
+  color: #fff;
+}
+.gp-svc-bento_note-icon {
+  margin-bottom: auto;
+  padding-bottom: 2rem;
+  opacity: .9;
+}
+.gp-svc-bento_item--note strong {
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+.gp-svc-bento_item--note p {
+  margin: .5rem 0 0;
+  color: rgba(255, 255, 255, .8);
+  font-size: .9375rem;
+  line-height: 1.55;
+}
+
+/* Kundenstimme – wie Startseite, eine einzelne ohne Slider */
+.gp-reviews {
+  background-color: var(--cream-deep);
+}
+.gp-reviews_inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 7rem 2rem;
+}
+.gp-reviews_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 4.5rem;
+}
+.gp-reviews_title {
+  margin: 0;
+  color: var(--black);
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: var(--ls-heading);
+}
+.gp-reviews_all {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  color: var(--primary);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.gp-review_body .gp-reviews_all {
+  display: flex;
+  width: fit-content;
+  margin-top: 2.75rem;
+}
+.gp-reviews_all svg {
+  transition: transform .2s;
+}
+.gp-reviews_all:hover svg {
+  transform: translateX(3px);
+}
+.gp-review {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 26rem);
+  align-items: center;
+  gap: 4rem;
+}
+.gp-review_body {
+  max-width: 34rem;
+}
+.gp-review_rating {
+  margin-bottom: 1.75rem;
+}
+.gp-review_stars {
+  color: var(--primary);
+  font-size: 1rem;
+  letter-spacing: -.05em;
+}
+.gp-review_quote {
+  margin: 0 0 2rem;
+  padding: 0;
+  border: 0;
+  color: var(--black);
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -.01em;
+}
+.gp-review_name {
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.gp-review_role {
+  color: var(--gray);
+  font-size: var(--fs-small);
+}
+.gp-review_media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 14px;
+  background-color: #e9e6f0;
+}
+.gp-review_media img,
+.gp-review_media iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+.gp-review_play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 0 0 0 4px;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .9);
+  color: var(--primary);
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: transform .25s, background-color .25s;
+}
+.gp-review_play[hidden] {
+  display: none;
+}
+.gp-review_play svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+.gp-review_play:hover {
+  background-color: #fff;
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+/* FAQ – wie Startseite */
+.faq-wrapper .uui-faq01_list {
+  display: flex;
+  flex-direction: column;
+}
+.faq-wrapper .faq-frage {
+  border-bottom: 1px solid #202020;
+  transition: background-color .25s ease, border-color .25s ease, border-radius .25s ease;
+}
+.faq-wrapper .faq-frage + .faq-frage {
+  margin-top: 1.25rem;
+}
+.faq-wrapper .uui-faq01_question {
+  padding: 1.6rem 2rem;
+}
+.faq-wrapper .uui-faq01_answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 2rem;
+  transition: max-height .3s ease, opacity .25s ease, padding .3s ease;
+}
+.faq-wrapper .faq-frage.is-open {
+  background: #F5F2FF;
+  border-bottom-color: transparent;
+  border-radius: 28px;
+}
+.faq-wrapper .faq-frage.is-open .uui-faq01_answer {
+  opacity: 1;
+  padding: 0 2rem 2rem;
+}
+.faq-wrapper .uui-faq01_icon-wrapper svg {
+  transition: transform .25s ease;
+  transform-origin: center;
+  transform: rotate(0deg);
+}
+.faq-wrapper .faq-frage.is-open .uui-faq01_icon-wrapper svg {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 991px) {
+  .gp-about_split {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .gp-svc-section {
+    padding: 5rem 0;
+  }
+  .gp-svc-section--tight {
+    padding: 0 0 5rem;
+  }
+  .gp-svc-steps {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3rem;
+  }
+  .gp-svc_head--row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 767px) {
+  .gp-about_inner,
+  .gp-svc_inner {
+    width: auto;
+    margin: 0 1rem;
+  }
+  .gp-about-hero {
+    padding-top: 4rem;
+  }
+  .gp-about_hero-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .gp-lp-hero_aside {
+    gap: 1.25rem;
+  }
+  .gp-about_hero-media {
+    margin-top: 3rem;
+    border-radius: 18px;
+    aspect-ratio: 4 / 3;
+  }
+  .gp-lp-intro {
+    padding: 5rem 0 1rem;
+  }
+  .gp-lp-intro_text {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .gp-svc-section {
+    padding: 4rem 0;
+  }
+  .gp-svc-section--tight {
+    padding: 0 0 4rem;
+  }
+  .gp-svc-steps,
+  .gp-svc-bento {
+    grid-template-columns: 1fr;
+  }
+  .gp-svc-bento_item--large {
+    grid-row: auto;
+    min-height: 24rem;
+  }
+  .gp-reviews_inner {
+    padding: 4.5rem 1rem;
+  }
+  .gp-reviews_head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .gp-review {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .gp-review_media {
+    order: -1;
+    aspect-ratio: 4 / 3;
+  }
+  .faq-wrapper .uui-faq01_question,
+  .faq-wrapper .uui-faq01_answer,
+  .faq-wrapper .faq-frage.is-open .uui-faq01_answer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
