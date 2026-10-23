@@ -2622,3 +2622,14 @@ body {
   transform: scaleX(1);
   transform-origin: left center;
 }
+
+/* Mobile-Menü: geöffnet füllt es den restlichen Bildschirm unter der Navbar */
+@media screen and (max-width: 991px) {
+  .navbar .w-nav-overlay {
+    height: calc(100dvh - 100%) !important;
+    overflow-y: auto;
+  }
+  .navbar .w-nav-overlay .nav-center {
+    min-height: 100%;
+  }
+}
