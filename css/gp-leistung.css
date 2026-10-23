@@ -151,20 +151,38 @@
 }
 .gp-svc-step {
   position: relative;
-  padding-top: 2rem;
-  border-top: 2px solid var(--svc-line);
 }
-.gp-svc-step::before {
+/* Verbindungslinie mit Pfeil zum nächsten Schritt */
+.gp-svc-step:not(:last-child)::before {
   content: "";
   position: absolute;
-  top: -2px;
-  left: 0;
-  width: 3rem;
+  top: calc(1.375rem - 1px);
+  left: 3.5rem;
+  right: -1.25rem;
   height: 2px;
-  background-color: var(--primary);
+  background-color: var(--svc-line);
+}
+.gp-svc-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: calc(1.375rem - 5px);
+  right: -1.25rem;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--primary);
+  border-right: 2px solid var(--primary);
+  transform: rotate(45deg);
 }
 .gp-svc-step_num {
-  color: var(--primary);
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: #fff;
   font-size: .9375rem;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
@@ -436,6 +454,10 @@
     grid-template-columns: repeat(2, 1fr);
     row-gap: 3rem;
   }
+  .gp-svc-step:nth-child(2n)::before,
+  .gp-svc-step:nth-child(2n)::after {
+    display: none;
+  }
   .gp-svc_head--row {
     flex-direction: column;
     align-items: flex-start;
@@ -484,6 +506,41 @@
   .gp-svc-bento_item--large {
     grid-row: auto;
     min-height: 24rem;
+  }
+  /* Schritte untereinander: Linie läuft senkrecht nach unten */
+  .gp-svc-step {
+    padding-left: 4rem;
+  }
+  .gp-svc-step_num {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .gp-svc-step h3 {
+    margin-top: .5rem;
+  }
+  .gp-svc-step:nth-child(n)::before,
+  .gp-svc-step:nth-child(n)::after {
+    display: block;
+  }
+  .gp-svc-step:last-child::before,
+  .gp-svc-step:last-child::after {
+    display: none;
+  }
+  .gp-svc-step:not(:last-child)::before {
+    top: 3.25rem;
+    bottom: -1.5rem;
+    left: calc(1.375rem - 1px);
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+  .gp-svc-step:not(:last-child)::after {
+    top: auto;
+    bottom: -1.5rem;
+    left: calc(1.375rem - 6px);
+    right: auto;
+    transform: rotate(135deg);
   }
   .gp-reviews_inner {
     padding: 4.5rem 1rem;
