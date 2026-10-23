@@ -160,7 +160,7 @@
   left: 3.5rem;
   right: -1.25rem;
   height: 2px;
-  background-color: var(--svc-line);
+  background-color: var(--primary);
 }
 .gp-svc-step:not(:last-child)::after {
   content: "";
