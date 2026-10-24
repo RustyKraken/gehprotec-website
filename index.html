@@ -149,7 +149,8 @@ body {
   right: 0;
   z-index: 1000;
   background-color: transparent;
-  transition: background-color .3s;
+  border-bottom-color: transparent;
+  transition: background-color .3s, border-color .3s;
 }
 .navbar.gp-nav-overlay .menu-icon_line-top,
 .navbar.gp-nav-overlay .menu-icon_line-middle,
@@ -170,6 +171,7 @@ body {
 .navbar.gp-nav-overlay.gp-nav-solid,
 .navbar.gp-nav-overlay:has(.w-nav-button.w--open) {
   background-color: var(--cream);
+  border-bottom-color: #e9e6f0;
 }
 .navbar.gp-nav-overlay.gp-nav-solid .menu-icon_line-top,
 .navbar.gp-nav-overlay.gp-nav-solid .menu-icon_line-middle,
