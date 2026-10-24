@@ -2638,3 +2638,68 @@ body {
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
+
+/* Anfrage-Buttons: mehr Präsenz und klares Hover-Feedback */
+.cta-button,
+.gp-hero_btn--primary {
+  box-shadow: 0 8px 20px -8px rgba(94, 69, 185, .6);
+  transition: background-color .3s, border-color .3s, box-shadow .3s, transform .3s;
+}
+.cta-button:hover,
+.gp-hero_btn--primary:hover {
+  box-shadow: 0 14px 28px -10px rgba(94, 69, 185, .7);
+  transform: translateY(-2px);
+}
+.cta-button svg,
+.gp-hero_btn svg {
+  flex: none;
+  transition: transform .3s;
+}
+.cta-button:hover svg,
+.gp-hero_btn:hover svg {
+  transform: translateX(3px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cta-button:hover,
+  .gp-hero_btn--primary:hover,
+  .cta-button:hover svg,
+  .gp-hero_btn:hover svg {
+    transform: none;
+  }
+}
+
+/* Leistungen-Hero: Heading + Subtext links, Anfrage-Button rechts */
+.container.leistungen-hero {
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem 3rem;
+}
+.leistungen-hero_text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 36rem;
+}
+.leistungen-hero_text .h1 {
+  margin: 0;
+}
+.container.leistungen-hero .cta-button {
+  flex: none;
+}
+@media screen and (max-width: 767px) {
+  .container.leistungen-hero {
+    flex-flow: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+.container.leistungen-hero::before,
+.container.leistungen-hero::after {
+  display: none;
+}
+
+/* Navbar vom weißen Seitenhintergrund abgrenzen */
+.navbar {
+  border-bottom: 1px solid #e9e6f0;
+}

@@ -391,6 +391,22 @@
   width: 1.125rem;
   height: 1.125rem;
 }
+.gp-review_play::before {
+  content: "";
+  position: absolute;
+  inset: -.75rem;
+  border: 1px solid rgba(255, 255, 255, .6);
+  border-radius: 50%;
+  animation: gp-review-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes gp-review-pulse {
+  from { transform: scale(.85); opacity: 1; }
+  to { transform: scale(1.35); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gp-review_play::before { animation: none; }
+}
 .gp-review_play:hover {
   background-color: #fff;
   transform: translate(-50%, -50%) scale(1.06);

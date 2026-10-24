@@ -14,7 +14,7 @@
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/gehprotec.webflow.css?v=20" rel="stylesheet" type="text/css">
+  <link href="css/gehprotec.webflow.css?v=22" rel="stylesheet" type="text/css">
   <style>@media not all and (max-width: 479px) and (min-width: 0px){@media not all and (max-width: 767px) and (min-width: 480px){@media not all and (max-width: 991px) and (min-width: 768px){html.w-mod-js:not(.w-mod-ix3) :is(:is(.leistung-box, .leistung-box) .leistung-arrow) {visibility: hidden !important;}}}}</style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -485,7 +485,7 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
         <h1 class="gp-hero_title">Mobilität <em>zurückgewinnen.</em><br>In jedem Alter.</h1>
         <p class="gp-hero_text">Wir helfen Ihnen, Ihre Mobilität zu erhalten oder zurückzugewinnen – mit dem Blick für den Menschen.</p>
         <div class="gp-hero_actions">
-          <a href="kontakt.html" class="gp-hero_btn gp-hero_btn--primary">Kostenlose Beratung anfragen</a>
+          <a href="kontakt.html" class="gp-hero_btn gp-hero_btn--primary">Kostenlose Beratung anfragen<svg width="18" height="18" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
           <a href="leistungen.html" class="gp-hero_btn gp-hero_btn--ghost">Unsere Leistungen<svg width="18" height="18" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
         </div>
         <div class="gp-hero_trust">
@@ -732,7 +732,7 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
         <article class="gp-review is-active" aria-roledescription="slide" aria-label="1 von 3">
           <div class="gp-review_body">
             <div class="gp-review_rating"><span class="gp-review_stars" aria-label="5 von 5 Sternen">★★★★★</span></div>
-            <blockquote class="gp-review_quote">Ralf erzählt im Video, wie er mit seiner Armprothese von GehProTec seinen Alltag meistert.</blockquote>
+            <blockquote class="gp-review_quote">„Nach dem Verlust meines Arms wusste ich nicht, wie es weitergehen soll. Das Team von GehProTec hat sich Zeit genommen, alles erklärt und eine Prothese gebaut, die wirklich zu mir passt. Heute meistere ich meinen Alltag wieder selbstständig.“</blockquote>
             <div class="gp-review_name">Ralf</div>
             <div class="gp-review_role">Armprothese</div>
           </div>
@@ -915,6 +915,22 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
 .gp-review_play svg {
   width: 1.125rem;
   height: 1.125rem;
+}
+.gp-review_play::before {
+  content: "";
+  position: absolute;
+  inset: -.75rem;
+  border: 1px solid rgba(255, 255, 255, .6);
+  border-radius: 50%;
+  animation: gp-review-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes gp-review-pulse {
+  from { transform: scale(.85); opacity: 1; }
+  to { transform: scale(1.35); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gp-review_play::before { animation: none; }
 }
 .gp-review_play:hover {
   background-color: #fff;
