@@ -2256,15 +2256,14 @@ body {
 }
 @media screen and (max-width: 767px) {
   .gp-cta {
-    margin-top: -1rem;
-    padding: 0 1rem 1.5rem;
+    padding: 0 1rem;
   }
   .gp-cta_card {
-    min-height: 24rem;
+    min-height: 0;
     border-radius: 18px;
   }
   .gp-cta_card::before {
-    background: linear-gradient(180deg, rgba(14, 10, 26, .1) 0%, rgba(14, 10, 26, .55) 40%, rgba(14, 10, 26, .9) 100%);
+    background: linear-gradient(180deg, rgba(14, 10, 26, .6) 0%, rgba(14, 10, 26, .75) 50%, rgba(14, 10, 26, .9) 100%);
   }
   .gp-cta_content {
     padding: 2rem 1.5rem;
