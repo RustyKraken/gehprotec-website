@@ -2256,7 +2256,7 @@ body {
 }
 @media screen and (max-width: 767px) {
   .gp-cta {
-    padding: 1rem 1rem 3rem;
+    padding: 0 1rem;
   }
   .gp-cta_card {
     min-height: 24rem;
