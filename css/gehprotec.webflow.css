@@ -2707,6 +2707,8 @@ body {
   .navbar .nav-center .dropdown-content {
     display: block !important;
     height: auto !important;
+    background: transparent;
+    box-shadow: none;
   }
   .navbar .nav-center .uui-dropdown-icon {
     display: none;
