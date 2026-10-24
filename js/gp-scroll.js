@@ -254,3 +254,14 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
   check();
 })();
+
+/* Mobile-Menü: Leistungen-Dropdown ist offen und lässt sich per Tippen ein- und ausklappen */
+(function () {
+  var mobile = window.matchMedia("(max-width: 991px)");
+  document.addEventListener("click", function (e) {
+    if (!mobile.matches) return;
+    var toggle = e.target.closest(".nav-center .dropdown-toggle");
+    if (!toggle) return;
+    toggle.closest(".nav-dropdown").classList.toggle("gp-dd-collapsed");
+  });
+})();

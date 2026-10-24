@@ -2702,7 +2702,7 @@ body {
   border-bottom: 1px solid #e9e6f0;
 }
 
-/* Mobile-Menü: Leistungen-Dropdown direkt aufgeklappt */
+/* Mobile-Menü: Leistungen-Dropdown standardmäßig aufgeklappt, per Tippen einklappbar (js/gp-scroll.js) */
 @media screen and (max-width: 991px) {
   .navbar .nav-center .dropdown-content {
     display: block !important;
@@ -2710,7 +2710,13 @@ body {
     background: transparent;
     box-shadow: none;
   }
-  .navbar .nav-center .uui-dropdown-icon {
-    display: none;
+  .navbar .nav-center .nav-dropdown.gp-dd-collapsed .dropdown-content {
+    display: none !important;
+  }
+  .navbar .nav-center .nav-dropdown .dropdown-toggle .uui-dropdown-icon svg {
+    transform: rotate(180deg);
+  }
+  .navbar .nav-center .nav-dropdown.gp-dd-collapsed .dropdown-toggle .uui-dropdown-icon svg {
+    transform: none;
   }
 }
