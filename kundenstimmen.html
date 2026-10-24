@@ -9,7 +9,7 @@
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/gehprotec.webflow.css?v=19" rel="stylesheet" type="text/css">
+  <link href="css/gehprotec.webflow.css?v=20" rel="stylesheet" type="text/css">
   <style>@media not all and (max-width: 479px) and (min-width: 0px){@media not all and (max-width: 767px) and (min-width: 480px){@media not all and (max-width: 991px) and (min-width: 768px){html.w-mod-js:not(.w-mod-ix3) :is(:is(.leistung-box, .leistung-box) .leistung-arrow) {visibility: hidden !important;}}}}</style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -102,14 +102,14 @@
   cursor: pointer;
   box-shadow: 0 30px 60px -30px rgba(94, 69, 185, .45);
 }
-.gp-ks-hero_video img {
+.gp-ks-hero_video :is(img, video) {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform .8s cubic-bezier(.2, .8, .2, 1);
 }
-.gp-ks-hero_video:hover img {
+.gp-ks-hero_video:hover :is(img, video) {
   transform: scale(1.04);
 }
 .gp-ks-hero_shade {
@@ -284,7 +284,7 @@
   cursor: pointer;
   clip-path: inset(0 round 24px);
 }
-.gp-ks-story_media img {
+.gp-ks-story_media :is(img, video) {
   display: block;
   width: 100%;
   height: 100%;
@@ -298,7 +298,7 @@
   background: rgba(18, 14, 30, .12);
   transition: background-color .4s ease;
 }
-.gp-ks-story_media:hover img {
+.gp-ks-story_media:hover :is(img, video) {
   transform: scale(1.04);
 }
 .gp-ks-story_media:hover::after {
@@ -554,16 +554,16 @@
           </div>
         </dl>
       </div>
-      <button type="button" class="gp-ks-hero_video" youtube-src="https://www.youtube.com/embed/pb-j3svRQLI" aria-label="Video abspielen: Mit Prothese wieder auf dem Stand-up-Paddle">
-        <img src="images/Review.avif" alt="Patient mit Beinprothese beim Stand-up-Paddling auf einem See">
+      <button type="button" class="gp-ks-hero_video" youtube-src="https://www.youtube.com/embed/yXDsyfETRCo" aria-label="Video abspielen: Ralf über seine Armprothese">
+        <video src="videos/ralf-kundenstimme-preview.mp4" poster="images/ralf-kundenstimme-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
         <span class="gp-ks-hero_shade"></span>
         <span class="gp-ks-hero_play"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true">
             <path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path>
           </svg></span>
         <span class="gp-ks-hero_caption">
           <span class="gp-ks-hero_label">Erfahrungsbericht im Video</span>
-          <span class="gp-ks-hero_title">Mit Prothese wieder auf dem Stand-up-Paddle</span>
-          <span class="gp-ks-hero_name">Max Mustermann</span>
+          <span class="gp-ks-hero_title">Mit Armprothese zurück in den Alltag</span>
+          <span class="gp-ks-hero_name">Ralf</span>
         </span>
       </button>
     </div>

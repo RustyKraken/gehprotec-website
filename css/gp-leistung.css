@@ -357,6 +357,7 @@
   background-color: #e9e6f0;
 }
 .gp-review_media img,
+.gp-review_media video,
 .gp-review_media iframe {
   position: absolute;
   inset: 0;
@@ -560,4 +561,8 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+}
+
+.gp-review_media video {
+  object-position: 62% center;
 }

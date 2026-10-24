@@ -14,7 +14,7 @@
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/gehprotec.webflow.css?v=19" rel="stylesheet" type="text/css">
+  <link href="css/gehprotec.webflow.css?v=20" rel="stylesheet" type="text/css">
   <style>@media not all and (max-width: 479px) and (min-width: 0px){@media not all and (max-width: 767px) and (min-width: 480px){@media not all and (max-width: 991px) and (min-width: 768px){html.w-mod-js:not(.w-mod-ix3) :is(:is(.leistung-box, .leistung-box) .leistung-arrow) {visibility: hidden !important;}}}}</style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -732,12 +732,12 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
         <article class="gp-review is-active" aria-roledescription="slide" aria-label="1 von 3">
           <div class="gp-review_body">
             <div class="gp-review_rating"><span class="gp-review_stars" aria-label="5 von 5 Sternen">★★★★★</span></div>
-            <blockquote class="gp-review_quote">„Nach meiner Amputation dachte ich, Sport sei vorbei. Heute stehe ich wieder auf dem Board – dank einer Prothese, die wirklich zu mir passt.“</blockquote>
-            <div class="gp-review_name">Max Mustermann</div>
-            <div class="gp-review_role">Oberschenkelprothese</div>
+            <blockquote class="gp-review_quote">Ralf erzählt im Video, wie er mit seiner Armprothese von GehProTec seinen Alltag meistert.</blockquote>
+            <div class="gp-review_name">Ralf</div>
+            <div class="gp-review_role">Armprothese</div>
           </div>
-          <div class="gp-review_media" data-youtube="https://www.youtube-nocookie.com/embed/pb-j3svRQLI?autoplay=1&amp;rel=0&amp;playsinline=1">
-            <img src="images/Hotline-5-Restaurant.avif" loading="lazy" alt="Patient mit Beinprothese beim Stehpaddeln">
+          <div class="gp-review_media" data-youtube="https://www.youtube-nocookie.com/embed/yXDsyfETRCo?autoplay=1&amp;rel=0&amp;playsinline=1">
+            <video src="videos/ralf-kundenstimme-preview.mp4" poster="images/ralf-kundenstimme-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Vorschau: Ralf mit seiner Armprothese"></video>
             <button type="button" class="gp-review_play" aria-label="Video abspielen"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true"><path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path></svg></button>
           </div>
         </article>
@@ -879,6 +879,7 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
   background-color: #e9e6f0;
 }
 .gp-review_media img,
+.gp-review_media video,
 .gp-review_media iframe {
   position: absolute;
   inset: 0;
@@ -886,6 +887,9 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
   height: 100%;
   border: 0;
   object-fit: cover;
+}
+.gp-review_media video {
+  object-position: 62% center;
 }
 .gp-review_play {
   position: absolute;
@@ -1034,7 +1038,7 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
     var frame = media && media.querySelector("iframe");
     if (!frame) return;
     frame.remove();
-    media.querySelector("img").hidden = false;
+    media.querySelector("img, video").hidden = false;
     media.querySelector(".gp-review_play").hidden = false;
   };
   var show = function (next) {
@@ -1061,7 +1065,7 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
       frame.title = "Kundenstimme Video";
       frame.allow = "autoplay; encrypted-media; picture-in-picture";
       frame.allowFullscreen = true;
-      media.querySelector("img").hidden = true;
+      media.querySelector("img, video").hidden = true;
       play.hidden = true;
       media.appendChild(frame);
       paused = true;

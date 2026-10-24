@@ -2354,14 +2354,11 @@ body :is(h1, h2, .h1, .h2, .gp-hero_title, .gp-svc_title, .gp-reviews_title, .gp
   font-weight: 500;
   letter-spacing: var(--ls-heading);
 }
+/* Headings einfarbig: <em> übernimmt die Textfarbe, keine Akzentfarbe */
 body :is(h1, h2, h3, .gp-review_quote) em {
-  color: var(--primary);
+  color: inherit;
   font-style: normal;
   font-weight: inherit;
-}
-/* Auf dunklem Hintergrund hellere Akzentfarbe für Kontrast */
-body :is(.gp-hero_title, .gp-cta_title) em {
-  color: #b9a8ff;
 }
 
 /* Scroll-Animationen (js/gp-scroll.js) */
@@ -2633,4 +2630,11 @@ body {
     visibility: visible !important;
     transform: none !important;
   }
+}
+
+/* Video-Vorschau in Kundenstimmen-Karten */
+.gp-video-preview {
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
