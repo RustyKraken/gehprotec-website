@@ -187,13 +187,14 @@
         <article class="gp-review">
           <div class="gp-review_body">
             <div class="gp-review_rating"><span class="gp-review_stars" aria-label="5 von 5 Sternen">★★★★★</span></div>
-            <blockquote class="gp-review_quote">„Die myoelektrische Hand hat meinen Alltag verändert. Das Team hat sich viel Zeit genommen, bis jede Bewegung sicher saß.“</blockquote>
-            <div class="gp-review_name">Erika Musterfrau</div>
-            <div class="gp-review_role">Myoelektrische Armprothese</div>
+            <blockquote class="gp-review_quote">„Nach dem Verlust meines Arms wusste ich nicht, wie es weitergehen soll. Das Team von GehProTec hat sich Zeit genommen, alles erklärt und eine Prothese gebaut, die wirklich zu mir passt. Heute meistere ich meinen Alltag wieder selbstständig.“</blockquote>
+            <div class="gp-review_name">Ralf</div>
+            <div class="gp-review_role">Armprothese</div>
             <a href="../kundenstimmen.html" class="gp-reviews_all">Alle Kundenstimmen<svg width="16" height="16" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
           </div>
-          <div class="gp-review_media">
-            <img src="../images/Rectangle4.avif" loading="lazy" alt="Patientin mit myoelektrischer Handprothese am Laptop">
+          <div class="gp-review_media" data-youtube="https://www.youtube-nocookie.com/embed/yXDsyfETRCo?autoplay=1&amp;rel=0&amp;playsinline=1">
+            <video src="../videos/ralf-kundenstimme-preview.mp4" poster="../images/ralf-kundenstimme-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Vorschau: Ralf mit seiner Armprothese"></video>
+            <button type="button" class="gp-review_play" aria-label="Video abspielen"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true"><path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path></svg></button>
           </div>
         </article>
       </div>
@@ -409,7 +410,7 @@
       frame.title = "Kundenstimme Video";
       frame.allow = "autoplay; encrypted-media; picture-in-picture";
       frame.allowFullscreen = true;
-      media.querySelector("img").hidden = true;
+      media.querySelector("img, video").hidden = true;
       play.hidden = true;
       media.appendChild(frame);
     });
