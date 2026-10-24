@@ -1185,7 +1185,7 @@ a {
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   grid-template-rows: auto;
-  grid-template-columns: 1fr .75fr .75fr .75fr .75fr;
+  grid-template-columns: 1fr .75fr .75fr .75fr;
   grid-auto-columns: 1fr;
   display: grid;
 }
@@ -2639,15 +2639,13 @@ body {
   object-fit: cover;
 }
 
-/* Anfrage-Buttons: mehr Präsenz und klares Hover-Feedback */
+/* Anfrage-Buttons: klares Hover-Feedback */
 .cta-button,
 .gp-hero_btn--primary {
-  box-shadow: 0 8px 20px -8px rgba(94, 69, 185, .6);
-  transition: background-color .3s, border-color .3s, box-shadow .3s, transform .3s;
+  transition: background-color .3s, border-color .3s, transform .3s;
 }
 .cta-button:hover,
 .gp-hero_btn--primary:hover {
-  box-shadow: 0 14px 28px -10px rgba(94, 69, 185, .7);
   transform: translateY(-2px);
 }
 .cta-button svg,

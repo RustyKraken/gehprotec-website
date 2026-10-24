@@ -31,12 +31,14 @@
   line-height: 1.05;
   letter-spacing: -.03em;
 }
-.gp-lp-hero_aside {
+.gp-lp-hero_text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 1.75rem;
-  max-width: 26rem;
+  gap: 1.5rem;
+  max-width: 44rem;
+}
+.gp-about_hero-head .cta-button {
+  flex: none;
 }
 .gp-about_intro {
   margin: 0;
@@ -490,7 +492,7 @@
     align-items: flex-start;
     gap: 1.25rem;
   }
-  .gp-lp-hero_aside {
+  .gp-lp-hero_text {
     gap: 1.25rem;
   }
   .gp-about_hero-media {
