@@ -2557,6 +2557,11 @@ body {
 .faq-wrapper {
   gap: 4rem;
 }
+/* Embed enthält nur <style> – darf keine Flex-Spalte (samt Abstand) erzeugen.
+   display: contents reicht nicht, die Leerzeichen darin würden eigene Flex-Elemente. */
+.faq-wrapper > .w-embed {
+  display: none;
+}
 .faq-left {
   flex: 0 0 32%;
   min-width: 0;
