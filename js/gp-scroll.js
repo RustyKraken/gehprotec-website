@@ -24,7 +24,9 @@
     ".gp-svc_head--row > *",
     ".gp-svc-step",
     ".gp-svc-bento_item",
-    ".gp-lp .gp-review"
+    ".gp-lp .gp-review",
+    // Kundenstimmen
+    ".gp-ks-story_media, .gp-ks-story_body"
   ];
 
   var inView = function (el, ratio) {
@@ -169,14 +171,16 @@
     );
   });
 
-  // Zahlen hochzählen (z. B. „500+“)
+  // Zahlen hochzählen (z. B. „500+“); Jahreszahlen mit data-count-from="year"
+  // zählen vom aktuellen Jahr rückwärts
   gsap.utils.toArray(".gp-about_stat-value").forEach(function (el) {
     var match = el.textContent.trim().match(/^(\d+)(.*)$/);
     if (!match) return;
     var target = Number(match[1]);
     var suffix = match[2];
-    var counter = { value: 0 };
-    el.textContent = "0" + suffix;
+    var start = el.dataset.countFrom === "year" ? new Date().getFullYear() : 0;
+    var counter = { value: start };
+    el.textContent = start + suffix;
     watch(el, 0.9, function () {
       gsap.to(counter, {
         value: target,

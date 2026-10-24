@@ -14,7 +14,7 @@
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/gehprotec.webflow.css?v=16" rel="stylesheet" type="text/css">
+  <link href="css/gehprotec.webflow.css?v=17" rel="stylesheet" type="text/css">
   <style>@media not all and (max-width: 479px) and (min-width: 0px){@media not all and (max-width: 767px) and (min-width: 480px){@media not all and (max-width: 991px) and (min-width: 768px){html.w-mod-js:not(.w-mod-ix3) :is(:is(.leistung-box, .leistung-box) .leistung-arrow) {visibility: hidden !important;}}}}</style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -717,7 +717,7 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
               <li class="gp-step"><svg class="gp-step_icon" viewbox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg><span>Begleitung zurück in den Alltag</span></li>
             </ul>
           </div>
-          <div class="content-image rounded"><img src="images/gehprotec-leben-mit-amputation-begleitung.webp" loading="lazy" sizes="100vw" srcset="images/gehprotec-leben-mit-amputation-begleitung-p-500.webp 500w, images/gehprotec-leben-mit-amputation-begleitung-p-800.webp 800w, images/gehprotec-leben-mit-amputation-begleitung.webp 1008w" alt="GehProTec-Mitarbeiterin untersucht behutsam den Armstumpf eines Patienten" class="image"></div>
+          <div class="content-image rounded"><img src="images/gehprotec-leben-mit-amputation-begleitung.webp" loading="lazy" sizes="100vw" srcset="images/gehprotec-leben-mit-amputation-begleitung-p-500.webp 500w, images/gehprotec-leben-mit-amputation-begleitung-p-800.webp 800w, images/gehprotec-leben-mit-amputation-begleitung.webp 1100w" alt="GehProTec-Mitarbeiterin untersucht behutsam den Armstumpf eines Patienten" class="image"></div>
         </div>
       </div>
     </div>
@@ -848,8 +848,9 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
 }
 .gp-review_stars {
   color: var(--primary);
-  font-size: 1rem;
-  letter-spacing: -.05em;
+  font-size: 1.125rem;
+  line-height: 1;
+  letter-spacing: .15em;
 }
 .gp-review_quote {
   margin: 0 0 2rem;
@@ -1074,7 +1075,7 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
     <div class="padding smaller">
       <div class="w-layout-blockcontainer container smaller w-container">
         <div class="w-layout-vflex content-container">
-          <div class="content-image rounded"><img src="images/gehprotec-individuelle-fertigung-werkstatt.webp" loading="lazy" sizes="100vw" srcset="images/gehprotec-individuelle-fertigung-werkstatt-p-500.webp 500w, images/gehprotec-individuelle-fertigung-werkstatt-p-800.webp 800w, images/gehprotec-individuelle-fertigung-werkstatt.webp 942w" alt="Orthopädietechniker fertigt einen individuellen Prothesenschaft in der GehProTec-Werkstatt" class="image"></div>
+          <div class="content-image rounded"><img src="images/gehprotec-individuelle-fertigung-werkstatt.webp" loading="lazy" sizes="100vw" srcset="images/gehprotec-individuelle-fertigung-werkstatt-p-500.webp 500w, images/gehprotec-individuelle-fertigung-werkstatt-p-800.webp 800w, images/gehprotec-individuelle-fertigung-werkstatt.webp 1100w" alt="Orthopädietechniker fertigt einen individuellen Prothesenschaft in der GehProTec-Werkstatt" class="image"></div>
           <div class="content-wrapper">
             <div class="space-content"></div>
             <h2 class="h2"><em>Individuelle</em> Fertigung in unserer Werkstatt</h2>
@@ -1132,10 +1133,14 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
+  /* clip-path schneidet auch animierte Ebenen (Overlay-Opacity) sauber ab */
+  clip-path: inset(0 round 20px);
+  isolation: isolate;
 }
 .gpts-overlay {
   position: absolute;
   inset: 0;
+  border-radius: inherit;
   background: linear-gradient(180deg, transparent 45%, rgba(32, 32, 32, 0.65));
 }
 .gpts-content {
@@ -1280,7 +1285,7 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
               </div>
             </div>
           </div>
-          <div class="contact-right"><img loading="lazy" src="images/Rectangle5.avif" alt="" class="image-full"></div>
+          <div class="contact-right"><img src="images/gehprotec-kontakt-beratung-p-800.webp" srcset="images/gehprotec-kontakt-beratung-p-500.webp 500w, images/gehprotec-kontakt-beratung-p-800.webp 800w, images/gehprotec-kontakt-beratung.webp 1080w" sizes="(max-width: 767px) 100vw, 40vw" loading="lazy" alt="Lächelnder Mann lehnt sich aus dem Fenster eines blauen Transporters" class="image-full"></div>
         </div>
       </div>
     </div>
@@ -1447,7 +1452,7 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
           <a href="tel:0421598606834" class="gp-cta_phone"><svg width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>0421 598606834</a>
         </div>
       </div>
-      <div class="gp-cta_media"><img src="images/gehprotec-prothesen-techniken-banner-p-1600.webp" srcset="images/gehprotec-prothesen-techniken-banner-p-800.webp 800w, images/gehprotec-prothesen-techniken-banner-p-1080.webp 1080w, images/gehprotec-prothesen-techniken-banner-p-1600.webp 1600w, images/gehprotec-prothesen-techniken-banner.webp 1920w" sizes="(max-width: 767px) 100vw, 80rem" loading="lazy" alt="GehProTec-Mitarbeiterin berät einen Patienten mit Armprothese"></div>
+      <div class="gp-cta_media"><img src="images/gehprotec-beratung-armprothese-p-1600.webp" srcset="images/gehprotec-beratung-armprothese-p-800.webp 800w, images/gehprotec-beratung-armprothese-p-1080.webp 1080w, images/gehprotec-beratung-armprothese-p-1600.webp 1600w, images/gehprotec-beratung-armprothese.webp 1920w" sizes="(max-width: 767px) 100vw, 80rem" loading="lazy" alt="GehProTec-Mitarbeiterin berät einen Patienten mit Armprothese"></div>
     </div>
   </section>
   <footer class="section gp-footer">
@@ -1551,7 +1556,7 @@ html.w-mod-js .gp-steps.is-visible .gp-step {
 </script>
   <script src="https://cdn.prod.website-files.com/gsap/3.15.0/gsap.min.js" type="text/javascript"></script>
   <script src="https://cdn.prod.website-files.com/gsap/3.15.0/ScrollTrigger.min.js" type="text/javascript"></script>
-  <script src="js/gp-scroll.js?v=8" type="text/javascript"></script>
+  <script src="js/gp-scroll.js?v=9" type="text/javascript"></script>
   <script>
 (function() {
   var link = document.getElementById("kontakt-link");

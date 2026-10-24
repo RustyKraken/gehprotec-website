@@ -326,8 +326,9 @@
 }
 .gp-review_stars {
   color: var(--primary);
-  font-size: 1rem;
-  letter-spacing: -.05em;
+  font-size: 1.125rem;
+  line-height: 1;
+  letter-spacing: .15em;
 }
 .gp-review_quote {
   margin: 0 0 2rem;

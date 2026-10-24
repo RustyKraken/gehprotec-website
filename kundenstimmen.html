@@ -9,7 +9,7 @@
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/gehprotec.webflow.css?v=16" rel="stylesheet" type="text/css">
+  <link href="css/gehprotec.webflow.css?v=17" rel="stylesheet" type="text/css">
   <style>@media not all and (max-width: 479px) and (min-width: 0px){@media not all and (max-width: 767px) and (min-width: 480px){@media not all and (max-width: 991px) and (min-width: 768px){html.w-mod-js:not(.w-mod-ix3) :is(:is(.leistung-box, .leistung-box) .leistung-arrow) {visibility: hidden !important;}}}}</style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -30,17 +30,436 @@
   }
 </style>
   <style>
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(var(--marquee-offset)); }
+/* Hero */
+.gp-ks-hero {
+  padding: 7rem 0 2rem;
+}
+.gp-ks-hero_inner {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 5rem;
+  width: 90%;
+  max-width: 76rem;
+  margin: 0 auto;
+}
+.gp-ks-hero_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.gp-ks-hero_heading {
+  margin: 0;
+  color: var(--black);
+  font-size: var(--fs-h1);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+.gp-ks-hero_intro {
+  max-width: 30rem;
+  margin: 1.75rem 0 2.25rem;
+  color: var(--gray);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.gp-ks-hero_facts {
+  display: flex;
+  gap: 2.5rem;
+  width: 100%;
+  margin: 3.5rem 0 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e9e6ef;
+}
+.gp-ks-hero_fact dt {
+  color: var(--black);
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+}
+.gp-ks-hero_fact dd {
+  margin: .375rem 0 0;
+  color: var(--gray);
+  font-size: .875rem;
+}
+.gp-ks-hero_video {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  justify-self: end;
+  aspect-ratio: 1;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  border-radius: 24px;
+  background: #17141f;
+  color: #fff;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  box-shadow: 0 30px 60px -30px rgba(94, 69, 185, .45);
+}
+.gp-ks-hero_video img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .8s cubic-bezier(.2, .8, .2, 1);
+}
+.gp-ks-hero_video:hover img {
+  transform: scale(1.04);
+}
+.gp-ks-hero_shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18, 14, 30, .82) 0%, rgba(18, 14, 30, .3) 40%, rgba(18, 14, 30, 0) 65%);
+}
+.gp-ks-hero_play {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--primary);
+  box-shadow: 0 12px 40px rgba(18, 14, 30, .25);
+  transform: translate(-50%, -50%);
+  transition: transform .4s cubic-bezier(.2, .8, .2, 1);
+}
+.gp-ks-hero_play::before {
+  content: "";
+  position: absolute;
+  inset: -.75rem;
+  border: 1px solid rgba(255, 255, 255, .6);
+  border-radius: 50%;
+  animation: gp-ks-pulse 2.4s ease-out infinite;
+}
+.gp-ks-hero_play svg {
+  width: 1.375rem;
+  height: 1.375rem;
+  margin-left: .25rem;
+}
+.gp-ks-hero_video:hover .gp-ks-hero_play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+.gp-ks-hero_video:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+@keyframes gp-ks-pulse {
+  from { transform: scale(.85); opacity: 1; }
+  to { transform: scale(1.35); opacity: 0; }
+}
+.gp-ks-hero_caption {
+  position: absolute;
+  left: 1.75rem;
+  right: 1.75rem;
+  bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .5rem;
+}
+.gp-ks-hero_label {
+  padding: .3125rem .75rem;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .14);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-size: .75rem;
+  font-weight: 500;
+}
+.gp-ks-hero_title {
+  margin-top: .25rem;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -.015em;
+}
+.gp-ks-hero_name {
+  color: rgba(255, 255, 255, .75);
+  font-size: .875rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gp-ks-hero_play::before {
+    animation: none;
   }
-  html.w-mod-js:not(.kundenstimmen-gsap-ready) .bewertung-hero-left,
-html.w-mod-js:not(.kundenstimmen-gsap-ready) .hero-image-bewertung,
-html.w-mod-js:not(.kundenstimmen-gsap-ready) .gprs-section .gprs-shell,
-html.w-mod-js:not(.kundenstimmen-gsap-ready) .gprs-section .gprs-pagination {
-  opacity: 0;
-  visibility: hidden;
-  transform: translate3d(0, 18px, 0);
+}
+@media screen and (max-width: 991px) {
+  .gp-ks-hero_inner {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .gp-ks-hero_video {
+    justify-self: start;
+    max-width: 34rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .gp-ks-hero {
+    padding-top: 4rem;
+  }
+  .gp-ks-hero_inner {
+    width: auto;
+    margin: 0 1rem;
+    gap: 2.5rem;
+  }
+  .gp-ks-hero_intro {
+    margin: 1.25rem 0 1.75rem;
+    font-size: 1rem;
+  }
+  .gp-ks-hero_facts {
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+  }
+  .gp-ks-hero_fact dt {
+    font-size: 1.375rem;
+  }
+  .gp-ks-hero_fact dd {
+    font-size: .8125rem;
+  }
+  .gp-ks-hero_video {
+    border-radius: 18px;
+  }
+  .gp-ks-hero_play {
+    width: 4.25rem;
+    height: 4.25rem;
+  }
+  .gp-ks-hero_play svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+  .gp-ks-hero_caption {
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: 1.25rem;
+  }
+  .gp-ks-hero_title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Erfahrungsberichte – Liste untereinander */
+.gp-ks-stories {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  width: 90%;
+  max-width: 68rem;
+  margin: 4rem auto 0;
+  text-align: left;
+}
+.gp-ks-story {
+  display: grid;
+  grid-template-columns: minmax(0, 24rem) minmax(0, 1fr);
+  align-items: center;
+  gap: 5rem;
+}
+.gp-ks-story:nth-child(even) {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
+}
+.gp-ks-story:nth-child(even) .gp-ks-story_media {
+  order: 2;
+}
+.gp-ks-story_media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 6;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  border-radius: 24px;
+  background: #17141f;
+  cursor: pointer;
+  clip-path: inset(0 round 24px);
+}
+.gp-ks-story_media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .8s cubic-bezier(.2, .8, .2, 1);
+}
+.gp-ks-story_media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 14, 30, .12);
+  transition: background-color .4s ease;
+}
+.gp-ks-story_media:hover img {
+  transform: scale(1.04);
+}
+.gp-ks-story_media:hover::after {
+  background: rgba(18, 14, 30, .25);
+}
+.gp-ks-story_play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--primary);
+  box-shadow: 0 12px 40px rgba(18, 14, 30, .25);
+  transform: translate(-50%, -50%);
+  transition: transform .4s cubic-bezier(.2, .8, .2, 1);
+}
+.gp-ks-story_play svg {
+  width: 1.375rem;
+  height: 1.375rem;
+  margin-left: .2rem;
+}
+.gp-ks-story_media:hover .gp-ks-story_play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+.gp-ks-story_media:focus-visible,
+.gp-ks-story_link:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+.gp-ks-story_body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.gp-ks-story_meta {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.gp-ks-story_num {
+  color: var(--primary);
+  font-family: var(--font-heading);
+  font-size: .9375rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+}
+.gp-ks-stars {
+  color: #f2b33d;
+  font-size: 1.125rem;
+  line-height: 1;
+  letter-spacing: .15em;
+}
+.gp-ks-story_title {
+  margin: 1.5rem 0 0;
+  color: var(--black);
+  font-size: clamp(1.625rem, 1.2rem + 1.2vw, 2.375rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -.02em;
+}
+.gp-ks-story_quote {
+  max-width: 34rem;
+  margin: 1.75rem 0 0;
+  color: var(--gray);
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+.gp-ks-story_author {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem 1rem;
+  margin-top: 2rem;
+}
+.gp-ks-story_name {
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.gp-ks-story_tag {
+  padding: .3125rem .75rem;
+  border-radius: 999px;
+  background: #f4f1fb;
+  color: var(--primary);
+  font-size: .8125rem;
+  font-weight: 500;
+}
+.gp-ks-story_link {
+  display: inline-flex;
+  align-items: center;
+  gap: .625rem;
+  margin-top: 2.25rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--primary);
+  font: inherit;
+  font-size: .9375rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.gp-ks-story_link svg {
+  width: .75rem;
+  height: .75rem;
+}
+.gp-ks-story_link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media screen and (max-width: 991px) {
+  .gp-ks-story,
+  .gp-ks-story:nth-child(even) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 3rem;
+  }
+  .gp-ks-story:nth-child(even) .gp-ks-story_media {
+    order: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .gp-ks-stories {
+    width: auto;
+    margin: 3rem 1rem 0;
+    gap: 4rem;
+  }
+  .gp-ks-story,
+  .gp-ks-story:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .gp-ks-story_media {
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
+    clip-path: inset(0 round 18px);
+  }
+  .gp-ks-story_media img {
+    object-position: center 30%;
+  }
+  .gp-ks-story_play {
+    width: 4.25rem;
+    height: 4.25rem;
+  }
+  .gp-ks-story_title {
+    margin-top: 1.25rem;
+  }
+  .gp-ks-story_quote {
+    margin-top: 1.25rem;
+    font-size: 1rem;
+  }
+  .gp-ks-story_author {
+    margin-top: 1.5rem;
+  }
+  .gp-ks-story_link {
+    margin-top: 1.75rem;
+  }
 }
 </style>
 </head>
@@ -112,299 +531,144 @@ html.w-mod-js:not(.kundenstimmen-gsap-ready) .gprs-section .gprs-pagination {
       </div>
     </div>
   </div>
-  <section class="section">
-    <div class="padding">
-      <div class="w-layout-blockcontainer container md w-container">
-        <div class="bewertung-hero">
-          <div class="bewertung-hero-left">
-            <h1 class="h1">Was unsere <em>Patienten</em> über uns sagen</h1>
-            <div class="text line-height-big">Lesen Sie, wie individuell angepasste Versorgung, moderne Technologie und persönliche Begleitung den Alltag unserer Kundinnen und Kunden nachhaltig verbessert haben.</div>
-            <a data-wf--cta-button--variant="base" href="kontakt.html" class="cta-button w-inline-block">
-              <div class="text-block">Jetzt anfragen</div>
-            </a>
+  <section class="gp-ks-hero">
+    <div class="gp-ks-hero_inner">
+      <div class="gp-ks-hero_content">
+        <h1 class="gp-ks-hero_heading">Was unsere <em>Patienten</em> über uns sagen</h1>
+        <p class="gp-ks-hero_intro">Lesen Sie, wie individuell angepasste Versorgung, moderne Technologie und persönliche Begleitung den Alltag unserer Patientinnen und Patienten verbessert haben.</p>
+        <a data-wf--cta-button--variant="base" href="kontakt.html" class="cta-button w-inline-block">
+          <div class="text-block">Jetzt anfragen</div>
+        </a>
+        <dl class="gp-ks-hero_facts">
+          <div class="gp-ks-hero_fact">
+            <dt>2007</dt>
+            <dd>in Bremen gegründet</dd>
           </div>
-          <div class="hero-image-bewertung">
-            <div data-wf--review-box--variant="full" class="review-box w-variant-87945b33-fe33-4a1a-d568-4305a61ce9bb not-max-hight">
-              <div youtube-src="https://www.youtube.com/embed/pb-j3svRQLI" class="slider-videos-wrapper w-variant-87945b33-fe33-4a1a-d568-4305a61ce9bb"><img loading="lazy" src="images/Review.avif" alt="" class="image-2">
-                <div class="background-gradient w-variant-87945b33-fe33-4a1a-d568-4305a61ce9bb"></div>
-                <div class="play-button w-variant-87945b33-fe33-4a1a-d568-4305a61ce9bb">
-                  <div class="code-embed w-variant-87945b33-fe33-4a1a-d568-4305a61ce9bb w-embed"><svg width="100%" height="100%" viewbox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="white"></path>
-                    </svg></div>
-                </div>
-                <h3 class="h2 review-heading w-variant-87945b33-fe33-4a1a-d568-4305a61ce9bb">Mit Prothese wieder auf dem Stand-up-Paddle</h3>
-                <div class="text review w-variant-87945b33-fe33-4a1a-d568-4305a61ce9bb">Max Mustermann</div>
-              </div>
-            </div>
+          <div class="gp-ks-hero_fact">
+            <dt>~400</dt>
+            <dd>Prothesen pro Jahr</dd>
           </div>
-        </div>
+          <div class="gp-ks-hero_fact">
+            <dt>5</dt>
+            <dd>Fachkräfte im Team</dd>
+          </div>
+        </dl>
       </div>
+      <button type="button" class="gp-ks-hero_video" youtube-src="https://www.youtube.com/embed/pb-j3svRQLI" aria-label="Video abspielen: Mit Prothese wieder auf dem Stand-up-Paddle">
+        <img src="images/Review.avif" alt="Patient mit Beinprothese beim Stand-up-Paddling auf einem See">
+        <span class="gp-ks-hero_shade"></span>
+        <span class="gp-ks-hero_play"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true">
+            <path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path>
+          </svg></span>
+        <span class="gp-ks-hero_caption">
+          <span class="gp-ks-hero_label">Erfahrungsbericht im Video</span>
+          <span class="gp-ks-hero_title">Mit Prothese wieder auf dem Stand-up-Paddle</span>
+          <span class="gp-ks-hero_name">Max Mustermann</span>
+        </span>
+      </button>
     </div>
   </section>
   <section class="section">
     <div class="padding center">
       <h2 class="h2 text-center">GehProTec <em>Erfahrungsberichte</em></h2>
       <div class="text line-height-big max-500 text-center">Sehen Sie, wie unsere Patientinnen und Patienten mit ihrer Prothese wieder aktiv geworden sind.</div>
-      <div class="space-md"></div>
-      <div style="overflow:hidden;width:100%">
-        <div id="marquee" style="display:flex;width:max-content" class="review-slider">
-          <div data-wf--review-box--variant="base" class="review-box not-max-hight">
-            <div youtube-src="https://www.youtube.com/embed/pb-j3svRQLI" class="slider-videos-wrapper"><img loading="lazy" src="images/Hotline-5-Restaurant.avif" alt="" class="image-2">
-              <div class="background-gradient"></div>
-              <div class="play-button">
-                <div class="code-embed w-embed"><svg width="100%" height="100%" viewbox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="white"></path>
-                  </svg></div>
-              </div>
-              <h3 class="h2 review-heading">Mit Prothese wieder auf dem Stand-up-Paddle</h3>
-              <div class="text review">Max Mustermann</div>
+      <div class="gp-ks-stories">
+        <article class="gp-ks-story">
+          <button type="button" class="gp-ks-story_media" youtube-src="https://www.youtube.com/embed/pb-j3svRQLI" aria-label="Video abspielen: Mit Prothese wieder auf dem Stand-up-Paddle">
+            <img src="images/Hotline-5-Restaurant.avif" loading="lazy" alt="">
+            <span class="gp-ks-story_play"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true"><path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path></svg></span>
+          </button>
+          <div class="gp-ks-story_body">
+            <div class="gp-ks-story_meta">
+              <span class="gp-ks-story_num">01</span>
+              <div class="gp-ks-stars" role="img" aria-label="5 von 5 Sternen">★★★★★</div>
             </div>
-          </div>
-          <div data-wf--review-box--variant="base" class="review-box not-max-hight">
-            <div youtube-src="https://www.youtube.com/embed/pb-j3svRQLI" class="slider-videos-wrapper"><img loading="lazy" src="images/Hotline-5-Restaurant.avif" alt="" class="image-2">
-              <div class="background-gradient"></div>
-              <div class="play-button">
-                <div class="code-embed w-embed"><svg width="100%" height="100%" viewbox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="white"></path>
-                  </svg></div>
-              </div>
-              <h3 class="h2 review-heading">Mit Prothese wieder auf dem Stand-up-Paddle</h3>
-              <div class="text review">Max Mustermann</div>
+            <h3 class="gp-ks-story_title">Mit Prothese wieder auf dem Stand-up-Paddle</h3>
+            <p class="gp-ks-story_quote">„Ich hätte nicht gedacht, dass ich noch einmal aufs Board steige. Heute bin ich jedes Wochenende auf dem Wasser.“</p>
+            <div class="gp-ks-story_author">
+              <span class="gp-ks-story_name">Max Mustermann</span>
+              <span class="gp-ks-story_tag">Unterschenkelprothese</span>
             </div>
+            <button type="button" class="gp-ks-story_link" youtube-src="https://www.youtube.com/embed/pb-j3svRQLI"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true"><path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path></svg>Video ansehen</button>
           </div>
-          <div data-wf--review-box--variant="base" class="review-box not-max-hight">
-            <div youtube-src="https://www.youtube.com/embed/pb-j3svRQLI" class="slider-videos-wrapper"><img loading="lazy" src="images/Hotline-5-Restaurant.avif" alt="" class="image-2">
-              <div class="background-gradient"></div>
-              <div class="play-button">
-                <div class="code-embed w-embed"><svg width="100%" height="100%" viewbox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="white"></path>
-                  </svg></div>
-              </div>
-              <h3 class="h2 review-heading">Mit Prothese wieder auf dem Stand-up-Paddle</h3>
-              <div class="text review">Max Mustermann</div>
+        </article>
+        <article class="gp-ks-story">
+          <button type="button" class="gp-ks-story_media" youtube-src="https://www.youtube.com/embed/pb-j3svRQLI" aria-label="Video abspielen: Immer dieselben Ansprechpartner">
+            <img src="images/Hotline-5-Restaurant.avif" loading="lazy" alt="">
+            <span class="gp-ks-story_play"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true"><path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path></svg></span>
+          </button>
+          <div class="gp-ks-story_body">
+            <div class="gp-ks-story_meta">
+              <span class="gp-ks-story_num">02</span>
+              <div class="gp-ks-stars" role="img" aria-label="5 von 5 Sternen">★★★★★</div>
             </div>
-          </div>
-          <div data-wf--review-box--variant="base" class="review-box not-max-hight">
-            <div youtube-src="https://www.youtube.com/embed/pb-j3svRQLI" class="slider-videos-wrapper"><img loading="lazy" src="images/Hotline-5-Restaurant.avif" alt="" class="image-2">
-              <div class="background-gradient"></div>
-              <div class="play-button">
-                <div class="code-embed w-embed"><svg width="100%" height="100%" viewbox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="white"></path>
-                  </svg></div>
-              </div>
-              <h3 class="h2 review-heading">Mit Prothese wieder auf dem Stand-up-Paddle</h3>
-              <div class="text review">Max Mustermann</div>
+            <h3 class="gp-ks-story_title">Immer dieselben Ansprechpartner</h3>
+            <p class="gp-ks-story_quote">„Vom ersten Gespräch bis zur fertigen Prothese hatte ich immer dieselben Ansprechpartner. Das hat mir viel Sicherheit gegeben.“</p>
+            <div class="gp-ks-story_author">
+              <span class="gp-ks-story_name">Thomas Beispiel</span>
+              <span class="gp-ks-story_tag">Unterschenkelprothese</span>
             </div>
+            <button type="button" class="gp-ks-story_link" youtube-src="https://www.youtube.com/embed/pb-j3svRQLI"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true"><path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path></svg>Video ansehen</button>
           </div>
-        </div>
+        </article>
+        <article class="gp-ks-story">
+          <button type="button" class="gp-ks-story_media" youtube-src="https://www.youtube.com/embed/pb-j3svRQLI" aria-label="Video abspielen: Treppen gehen, ohne nachzudenken">
+            <img src="images/Hotline-5-Restaurant.avif" loading="lazy" alt="">
+            <span class="gp-ks-story_play"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true"><path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path></svg></span>
+          </button>
+          <div class="gp-ks-story_body">
+            <div class="gp-ks-story_meta">
+              <span class="gp-ks-story_num">03</span>
+              <div class="gp-ks-stars" role="img" aria-label="5 von 5 Sternen">★★★★★</div>
+            </div>
+            <h3 class="gp-ks-story_title">Treppen gehen, ohne nachzudenken</h3>
+            <p class="gp-ks-story_quote">„Mit dem neuen Kniegelenk gehe ich Treppen wieder abwechselnd – Schritt für Schritt, ohne nachzudenken.“</p>
+            <div class="gp-ks-story_author">
+              <span class="gp-ks-story_name">Sabine Muster</span>
+              <span class="gp-ks-story_tag">Oberschenkelprothese mit Genium</span>
+            </div>
+            <button type="button" class="gp-ks-story_link" youtube-src="https://www.youtube.com/embed/pb-j3svRQLI"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true"><path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path></svg>Video ansehen</button>
+          </div>
+        </article>
+        <article class="gp-ks-story">
+          <button type="button" class="gp-ks-story_media" youtube-src="https://www.youtube.com/embed/pb-j3svRQLI" aria-label="Video abspielen: Wieder Vertrauen in den eigenen Gang">
+            <img src="images/Hotline-5-Restaurant.avif" loading="lazy" alt="">
+            <span class="gp-ks-story_play"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true"><path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path></svg></span>
+          </button>
+          <div class="gp-ks-story_body">
+            <div class="gp-ks-story_meta">
+              <span class="gp-ks-story_num">04</span>
+              <div class="gp-ks-stars" role="img" aria-label="5 von 5 Sternen">★★★★★</div>
+            </div>
+            <h3 class="gp-ks-story_title">Wieder Vertrauen in den eigenen Gang</h3>
+            <p class="gp-ks-story_quote">„In der Gehschule habe ich auf Rampe und Treppe wieder Vertrauen in meinen Gang gewonnen.“</p>
+            <div class="gp-ks-story_author">
+              <span class="gp-ks-story_name">Martin Beispiel</span>
+              <span class="gp-ks-story_tag">Gehschule</span>
+            </div>
+            <button type="button" class="gp-ks-story_link" youtube-src="https://www.youtube.com/embed/pb-j3svRQLI"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true"><path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path></svg>Video ansehen</button>
+          </div>
+        </article>
+        <article class="gp-ks-story">
+          <button type="button" class="gp-ks-story_media" youtube-src="https://www.youtube.com/embed/pb-j3svRQLI" aria-label="Video abspielen: Jeder Griff sitzt wieder">
+            <img src="images/Hotline-5-Restaurant.avif" loading="lazy" alt="">
+            <span class="gp-ks-story_play"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true"><path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path></svg></span>
+          </button>
+          <div class="gp-ks-story_body">
+            <div class="gp-ks-story_meta">
+              <span class="gp-ks-story_num">05</span>
+              <div class="gp-ks-stars" role="img" aria-label="5 von 5 Sternen">★★★★★</div>
+            </div>
+            <h3 class="gp-ks-story_title">Jeder Griff sitzt wieder</h3>
+            <p class="gp-ks-story_quote">„Das Team hat sich viel Zeit genommen, bis jeder Griff mit meiner myoelektrischen Hand sicher saß.“</p>
+            <div class="gp-ks-story_author">
+              <span class="gp-ks-story_name">Erika Musterfrau</span>
+              <span class="gp-ks-story_tag">Myoelektrische Armprothese</span>
+            </div>
+            <button type="button" class="gp-ks-story_link" youtube-src="https://www.youtube.com/embed/pb-j3svRQLI"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true"><path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path></svg>Video ansehen</button>
+          </div>
+        </article>
       </div>
-    </div>
-  </section>
-  <section class="section gprs-section">
-    <div class="padding center">
-      <div class="_w-layout-blockcontainer container w-container">
-        <div class="gprs-shell mb-5"><button type="button" aria-label="Vorherige Bewertung" class="gprs-nav-btn gprs-prev"><svg width="18" height="18" viewbox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M14.5 5.5L8 12L14.5 18.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg></button>
-          <div class="gprs-slider swiper">
-            <div class="swiper-wrapper">
-              <article class="gprs-slide swiper-slide-active swiper-slide">
-                <div class="review-box gprs-card">
-                  <p class="gprs-quote">“Vom ersten Gespräch bis zur fertigen Prothese hatte ich immer dieselben Ansprechpartner. Das hat mir viel Sicherheit gegeben.”</p>
-                  <div class="gprs-author">
-                    <div class="gprs-avatar"><img src="images/Rectangle4.avif" loading="lazy" alt="" class="image-full"></div>
-                    <div class="gprs-author-copy">
-                      <p class="gprs-name">Thomas Beispiel</p>
-                      <div class="text gprs-role"><span class="span-2">Unterschenkelprothese</span></div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article class="gprs-slide swiper-slide">
-                <div class="review-box gprs-card">
-                  <p class="gprs-quote">“Mit dem neuen Kniegelenk gehe ich Treppen wieder abwechselnd – Schritt für Schritt, ohne nachzudenken.”</p>
-                  <div class="gprs-author">
-                    <div class="gprs-avatar"><img src="images/Rectangle4.avif" loading="lazy" alt="" class="image-full"></div>
-                    <div class="gprs-author-copy">
-                      <p class="gprs-name">Sabine Muster</p>
-                      <div class="text gprs-role"><span class="span-2">Oberschenkelprothese mit Genium</span></div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article class="gprs-slide swiper-slide">
-                <div class="review-box gprs-card">
-                  <p class="gprs-quote">“Die Silikon-Fingerprothese ist farblich so gut angepasst, dass sie im Alltag kaum jemandem auffällt.”</p>
-                  <div class="gprs-author">
-                    <div class="gprs-avatar"><img src="images/Rectangle4.avif" loading="lazy" alt="" class="image-full"></div>
-                    <div class="gprs-author-copy">
-                      <p class="gprs-name">Jana Beispiel</p>
-                      <div class="text gprs-role"><span class="span-2">Silikonprothese</span></div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article class="gprs-slide swiper-slide">
-                <div class="review-box gprs-card">
-                  <p class="gprs-quote">“In der Gehschule habe ich auf Rampe und Treppe wieder Vertrauen in meinen Gang gewonnen.”</p>
-                  <div class="gprs-author">
-                    <div class="gprs-avatar"><img src="images/Rectangle4.avif" loading="lazy" alt="" class="image-full"></div>
-                    <div class="gprs-author-copy">
-                      <p class="gprs-name">Martin Beispiel</p>
-                      <div class="text gprs-role"><span class="span-2">Gehschule</span></div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article class="gprs-slide swiper-slide">
-                <div class="review-box gprs-card">
-                  <p class="gprs-quote">“Das Team hat sich viel Zeit genommen, bis jeder Griff mit meiner myoelektrischen Hand sicher saß.”</p>
-                  <div class="gprs-author">
-                    <div class="gprs-avatar"><img src="images/Rectangle4.avif" loading="lazy" alt="" class="image-full"></div>
-                    <div class="gprs-author-copy">
-                      <p class="gprs-name">Erika Musterfrau</p>
-                      <div class="text gprs-role"><span class="span-2">Myoelektrische Armprothese</span></div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div><button type="button" aria-label="Nächste Bewertung" class="gprs-nav-btn gprs-next"><svg width="18" height="18" viewbox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M9.5 5.5L16 12L9.5 18.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg></button>
-        </div>
-        <div class="gprs-pagination"></div>
-      </div>
-    </div>
-    <div class="w-embed">
-      <style>
-  .swiper {
-    width: 100%;
-  }
-  .swiper-wrapper {
-    display: flex;
-    align-items: stretch;
-  }
-  .swiper-slide {
-    flex-shrink: 0;
-  }
-  .gprs-section {
-    overflow: hidden;
-  }
-  .gprs-shell {
-    position: relative;
-  }
-  .gprs-slider {
-    overflow: visible;
-    padding: 0 3rem;
-  }
-  .gprs-slide {
-    width: min(78vw, 760px);
-    opacity: .5
-    cursor: pointer;
-    transition: opacity .25s ease;
-  }
-  .gprs-slide.swiper-slide-active {
-    opacity: 1;
-  }
-  .gprs-card {
-    text-align: center;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3rem;
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: column;
-  }
-  .gprs-quote {
-    color: var(--black);
-    margin: 0;
-  }
-  .gprs-author {
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    display: flex;
-  }
-  .gprs-avatar {
-    width: 80x;
-    height: 80x;
-    border-radius: 999px;
-    flex: none;
-  }
-  .gprs-author-copy {
-    text-align: left;
-  }
-  .gprs-name {
-    color: var(--black);
-  }
-  .gprs-role {
-    color: var(--black);
-  }
-  .gprs-nav-btn {
-    width: 48px;
-    height: 48px;
-    border: 1px solid var(--black);
-    border-radius: 999px;
-    background: #fff;
-    color: var(--black);
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    position: absolute;
-    top: 50%;
-    z-index: 2;
-    cursor: pointer;
-    transform: translateY(-50%);
-  }
-  .gprs-nav-btn.swiper-button-disabled {
-    opacity: .35;
-    pointer-events: none;
-  }
-  .gprs-prev {
-    left: 0;
-  }
-  .gprs-next {
-    right: 0;
-  }
-  .gprs-pagination {
-    justify-content: center;
-    gap: .5rem;
-    margin-top: 1rem;
-    display: flex;
-  }
-  .gprs-pagination .swiper-pagination-bullet {
-    width: 28px;
-    height: 4px;
-    border-radius: 999px;
-    background: #d8d8d8;
-    opacity: 1;
-    margin: 0 !important;
-  }
-  .gprs-pagination .swiper-pagination-bullet-active {
-    background: #202020;
-  }
-  @media screen and (max-width: 767px) {
-    .gprs-slider {
-      padding: 0 2.25rem;
-    }
-    .gprs-slide {
-      width: 84vw;
-    }
-    .gprs-card {
-      min-height: 340px;
-      gap: 2rem;
-    }
-    .gprs-nav-btn {
-      width: 40px;
-      height: 40px;
-    }
-    .gprs-avatar {
-      width: 88px;
-      height: 88px;
-    }
-  }
-</style>
     </div>
   </section>
   <section class="section overflow">
@@ -448,10 +712,14 @@ html.w-mod-js:not(.kundenstimmen-gsap-ready) .gprs-section .gprs-pagination {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
+  /* clip-path schneidet auch animierte Ebenen (Overlay-Opacity) sauber ab */
+  clip-path: inset(0 round 20px);
+  isolation: isolate;
 }
 .gpts-overlay {
   position: absolute;
   inset: 0;
+  border-radius: inherit;
   background: linear-gradient(180deg, transparent 45%, rgba(32, 32, 32, 0.65));
 }
 .gpts-content {
@@ -579,6 +847,205 @@ html.w-mod-js:not(.kundenstimmen-gsap-ready) .gprs-section .gprs-pagination {
       </div>
     </div>
   </section>
+  <section class="section gp-svc">
+    <div class="gp-svc_inner">
+      <div class="gp-svc_head">
+        <h2 class="gp-svc_title">Unsere Leistungen<br>für Ihre <em>Mobilität.</em></h2>
+        <p class="gp-svc_intro">Wir nehmen uns Zeit für Ihre Situation und finden gemeinsam die Versorgung, die wirklich passt.</p>
+      </div>
+      <div class="gp-svc_grid">
+        <a href="leistungen/armprothesen.html" class="gp-svc_card">
+          <img src="images/gehprotec-armprothese-myoelektrische-hand-p-800.webp" loading="lazy" alt="" class="gp-svc_card-img">
+          <span class="gp-svc_card-body">
+            <span class="gp-svc_card-title">Armprothesen</span>
+            <span class="gp-svc_card-foot">
+              <span class="gp-svc_card-text">Von kosmetisch bis myoelektrisch – individuell gefertigt für Alltag und Beruf.</span>
+              <span class="gp-svc_card-arrow" aria-hidden="true"><svg width="22" height="22" viewbox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </span>
+          </span>
+        </a>
+        <a href="leistungen/beinprothesen.html" class="gp-svc_card">
+          <img src="images/gehprotec-beinprothese-aufbau-werkstatt-p-800.webp" loading="lazy" alt="" class="gp-svc_card-img">
+          <span class="gp-svc_card-body">
+            <span class="gp-svc_card-title">Beinprothesen</span>
+            <span class="gp-svc_card-foot">
+              <span class="gp-svc_card-text">Maßgefertigte Ober- und Unterschenkelprothesen mit moderner Gelenktechnik.</span>
+              <span class="gp-svc_card-arrow" aria-hidden="true"><svg width="22" height="22" viewbox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </span>
+          </span>
+        </a>
+        <a href="leistungen/gehschule.html" class="gp-svc_card">
+          <img src="images/gehprotec-gehschule-rampe-treppe.webp" loading="lazy" alt="" class="gp-svc_card-img">
+          <span class="gp-svc_card-body">
+            <span class="gp-svc_card-title">Gehschule</span>
+            <span class="gp-svc_card-foot">
+              <span class="gp-svc_card-text">Ambulantes Einzeltraining, damit Sie sich mit Ihrer Prothese sicher bewegen.</span>
+              <span class="gp-svc_card-arrow" aria-hidden="true"><svg width="22" height="22" viewbox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </span>
+          </span>
+        </a>
+        <a href="leistungen/protesen-und-techniken.html" class="gp-svc_card">
+          <img src="images/gehprotec-prothesen-techniken-myo-app-p-800.webp" loading="lazy" alt="" class="gp-svc_card-img">
+          <span class="gp-svc_card-body">
+            <span class="gp-svc_card-title">Prothesen &amp; Techniken</span>
+            <span class="gp-svc_card-foot">
+              <span class="gp-svc_card-text">Liner, Kosmetik, Sportprothesen und mehr – moderne Technik im Überblick.</span>
+              <span class="gp-svc_card-arrow" aria-hidden="true"><svg width="22" height="22" viewbox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+    <style>
+.gp-svc_inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 7rem 2rem;
+}
+.gp-svc_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.gp-svc_title {
+  margin: 0;
+  color: var(--black);
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: var(--ls-heading);
+}
+.gp-svc_intro {
+  max-width: 22rem;
+  margin: 0;
+  color: var(--gray);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+.gp-svc_grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+.gp-svc_card {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: .75rem;
+  background-color: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  isolation: isolate;
+}
+.gp-svc_card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, .2) 50%, rgba(0, 0, 0, .1) 100%);
+  transition: background-color .4s ease;
+}
+.gp-svc_card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: filter .5s ease, transform .6s cubic-bezier(.22, 1, .36, 1);
+}
+.gp-svc_card-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: .625rem;
+  padding: 1.5rem;
+}
+.gp-svc_card-title {
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+.gp-svc_card-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+}
+.gp-svc_card-text {
+  color: rgba(255, 255, 255, .85);
+  font-size: .9375rem;
+  line-height: 1.45;
+}
+.gp-svc_card-arrow {
+  flex: none;
+  display: flex;
+  opacity: 0;
+  transform: translateX(-.5rem);
+  transition: opacity .35s ease, transform .35s ease;
+}
+@media (hover: hover) {
+  .gp-svc_card:hover .gp-svc_card-img {
+    filter: blur(3px);
+    transform: scale(1.08);
+  }
+  .gp-svc_card:hover::after {
+    background-color: rgba(0, 0, 0, .15);
+  }
+  .gp-svc_card:hover .gp-svc_card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.gp-svc_card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+@media screen and (max-width: 991px) {
+  .gp-svc_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: 767px) {
+  .gp-svc_inner {
+    padding: 4.5rem 1rem;
+  }
+  .gp-svc_head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .gp-svc_card-arrow {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media screen and (max-width: 479px) {
+  .gp-svc_grid {
+    grid-template-columns: 1fr;
+  }
+  .gp-svc_card {
+    aspect-ratio: 4 / 3;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gp-svc_card-img,
+  .gp-svc_card-arrow,
+  .gp-svc_card::after {
+    transition: none;
+  }
+}
+</style>
+  </section>
   <section id="anfrage" class="section">
     <div class="padding">
       <div class="w-layout-blockcontainer container w-container">
@@ -596,7 +1063,7 @@ html.w-mod-js:not(.kundenstimmen-gsap-ready) .gprs-section .gprs-pagination {
               </div>
             </div>
           </div>
-          <div class="contact-right"><img loading="lazy" src="images/Rectangle5.avif" alt="" class="image-full"></div>
+          <div class="contact-right"><img src="images/gehprotec-kontakt-beratung-p-800.webp" srcset="images/gehprotec-kontakt-beratung-p-500.webp 500w, images/gehprotec-kontakt-beratung-p-800.webp 800w, images/gehprotec-kontakt-beratung.webp 1080w" sizes="(max-width: 767px) 100vw, 40vw" loading="lazy" alt="Lächelnder Mann lehnt sich aus dem Fenster eines blauen Transporters" class="image-full"></div>
         </div>
       </div>
     </div>
@@ -763,7 +1230,7 @@ html.w-mod-js:not(.kundenstimmen-gsap-ready) .gprs-section .gprs-pagination {
           <a href="tel:0421598606834" class="gp-cta_phone"><svg width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>0421 598606834</a>
         </div>
       </div>
-      <div class="gp-cta_media"><img src="images/gehprotec-prothesen-techniken-banner-p-1600.webp" srcset="images/gehprotec-prothesen-techniken-banner-p-800.webp 800w, images/gehprotec-prothesen-techniken-banner-p-1080.webp 1080w, images/gehprotec-prothesen-techniken-banner-p-1600.webp 1600w, images/gehprotec-prothesen-techniken-banner.webp 1920w" sizes="(max-width: 767px) 100vw, 80rem" loading="lazy" alt="GehProTec-Mitarbeiterin berät einen Patienten mit Armprothese"></div>
+      <div class="gp-cta_media"><img src="images/gehprotec-beratung-armprothese-p-1600.webp" srcset="images/gehprotec-beratung-armprothese-p-800.webp 800w, images/gehprotec-beratung-armprothese-p-1080.webp 1080w, images/gehprotec-beratung-armprothese-p-1600.webp 1600w, images/gehprotec-beratung-armprothese.webp 1920w" sizes="(max-width: 767px) 100vw, 80rem" loading="lazy" alt="GehProTec-Mitarbeiterin berät einen Patienten mit Armprothese"></div>
     </div>
   </section>
   <footer class="section gp-footer">
@@ -837,7 +1304,7 @@ html.w-mod-js:not(.kundenstimmen-gsap-ready) .gprs-section .gprs-pagination {
   <script src="js/webflow.js" type="text/javascript"></script>
   <script src="https://cdn.prod.website-files.com/gsap/3.15.0/gsap.min.js" type="text/javascript"></script>
   <script src="https://cdn.prod.website-files.com/gsap/3.15.0/ScrollTrigger.min.js" type="text/javascript"></script>
-  <script src="js/gp-scroll.js?v=8" type="text/javascript"></script>
+  <script src="js/gp-scroll.js?v=9" type="text/javascript"></script>
   <script>
 (function() {
   var link = document.getElementById("kontakt-link");
@@ -852,31 +1319,8 @@ html.w-mod-js:not(.kundenstimmen-gsap-ready) .gprs-section .gprs-pagination {
       <cript src="http://localhost:3001/animations-antigravity.js">
         <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
         <script>
+/* Video-Popup für alle Elemente mit youtube-src (Hero und Erfahrungsberichte) */
 window.addEventListener("load", function () {
-  var marquee = document.getElementById("marquee");
-  if (!marquee || marquee.dataset.reviewEnhancementsInit === "true") return;
-  marquee.dataset.reviewEnhancementsInit = "true";
-  var original = Array.from(marquee.children);
-  var originalCount = original.length;
-  if (!originalCount) return;
-  var resizeTimer;
-  var sliderLocked = false;
-  var marqueeHovering = false;
-  var lastPointerX = 0;
-  var lastPointerY = 0;
-  var isTouchDevice =
-    "ontouchstart" in window ||
-    navigator.maxTouchPoints > 0 ||
-    (window.matchMedia && window.matchMedia("(pointer: coarse)").matches);
-  var canHover = !isTouchDevice;
-  var speed = 50;
-  var groupWidth = 0;
-  var currentOffset = 0;
-  var rafId = 0;
-  var lastFrameTime = 0;
-  marquee.style.willChange = "transform";
-  marquee.style.animation = "none";
-  marquee.style.transform = "translate3d(0, 0, 0)";
   function toYouTubeEmbed(url) {
     if (!url) return "";
     try {
@@ -907,194 +1351,82 @@ window.addEventListener("load", function () {
       return "";
     }
   }
-  function isPaused() {
-    return sliderLocked || (canHover && marqueeHovering);
-  }
-  function renderMarquee() {
-    marquee.style.transform = "translate3d(" + -currentOffset + "px, 0, 0)";
-  }
-  function buildMarquee(preserveProgress) {
-    while (marquee.children.length > originalCount) {
-      marquee.removeChild(marquee.lastChild);
+  var style = document.createElement("style");
+  style.textContent = `
+    .gp-review-modal {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(10, 10, 14, .76);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s ease, visibility .25s ease;
+      z-index: 99999;
     }
-    var progress = groupWidth > 0 ? currentOffset / groupWidth : 0;
-    marquee.style.transform = "translate3d(0, 0, 0)";
-    var firstRect = original[0].getBoundingClientRect();
-    var lastRect = original[originalCount - 1].getBoundingClientRect();
-    var newGroupWidth = lastRect.right - firstRect.left;
-    if (!newGroupWidth || newGroupWidth < 1) return;
-    var minWidth = window.innerWidth * 2 + newGroupWidth;
-    var totalWidth = newGroupWidth;
-    while (totalWidth < minWidth) {
-      original.forEach(function (item) {
-        marquee.appendChild(item.cloneNode(true));
-      });
-      totalWidth += newGroupWidth;
+    .gp-review-modal.is-open {
+      opacity: 1;
+      visibility: visible;
     }
-    groupWidth = newGroupWidth;
-    if (preserveProgress) {
-      currentOffset = progress * groupWidth;
+    .gp-review-modal__dialog {
+      position: relative;
+      width: min(960px, 100%);
+      background: #000;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .45);
+      transform: scale(.96);
+      transition: transform .25s ease;
     }
-    if (currentOffset >= groupWidth) {
-      currentOffset = currentOffset % groupWidth;
+    .gp-review-modal.is-open .gp-review-modal__dialog {
+      transform: scale(1);
     }
-    renderMarquee();
-  }
-  function tick(timestamp) {
-    if (!lastFrameTime) {
-      lastFrameTime = timestamp;
+    .gp-review-modal__close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, .14);
+      color: #fff;
+      cursor: pointer;
+      z-index: 2;
+      transition: background-color .2s ease, transform .2s ease;
     }
-    var delta = Math.min(64, timestamp - lastFrameTime);
-    lastFrameTime = timestamp;
-    if (groupWidth > 0 && !isPaused()) {
-      currentOffset += speed * (delta / 1000);
-      if (currentOffset >= groupWidth) {
-        currentOffset = currentOffset % groupWidth;
-      }
-      renderMarquee();
+    .gp-review-modal__close:hover {
+      background: rgba(255, 255, 255, .22);
+      transform: scale(1.06);
     }
-    rafId = window.requestAnimationFrame(tick);
-  }
-  function startTicker() {
-    if (rafId) return;
-    rafId = window.requestAnimationFrame(tick);
-  }
-  function updateHoverStateFromPointer() {
-    if (!canHover) {
-      marqueeHovering = false;
-      return;
+    .gp-review-modal__close:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
     }
-    var hoveredElement = document.elementFromPoint(lastPointerX, lastPointerY);
-    marqueeHovering = !!(
-      hoveredElement &&
-      hoveredElement.closest &&
-      hoveredElement.closest("#marquee")
-    );
-  }
-  if (!document.getElementById("gp-review-enhancements-style")) {
-    var style = document.createElement("style");
-    style.id = "gp-review-enhancements-style";
-    style.textContent = `
-      #marquee {
-        touch-action: pan-y;
-      }
-      #marquee .slider-videos-wrapper {
-        transform: translateZ(0);
-        cursor: pointer;
-      }
-      #marquee .slider-videos-wrapper .image-2 {
-        transform-origin: center center;
-      }
-      #marquee .slider-videos-wrapper .background-gradient {
-        opacity: .82;
-      }
-      #marquee .slider-videos-wrapper .play-button {
-        transform: translate(-50%, -50%) scale(1);
-        transform-origin: center center;
-        cursor: pointer;
-      }
-      @media (hover: hover) and (pointer: fine) {
-        #marquee .slider-videos-wrapper .image-2 {
-          transition: transform .45s cubic-bezier(.22,1,.36,1), filter .3s ease;
-          will-change: transform, filter;
-        }
-        #marquee .slider-videos-wrapper .background-gradient {
-          transition: opacity .3s ease;
-          will-change: opacity;
-        }
-        #marquee .slider-videos-wrapper .play-button {
-          transition: transform .28s cubic-bezier(.22,1,.36,1), background-color .28s ease, box-shadow .28s ease;
-          box-shadow: 0 0 0 rgba(94, 69, 185, 0);
-          will-change: transform, background-color, box-shadow;
-        }
-        #marquee .slider-videos-wrapper.is-review-hover .image-2 {
-          transform: scale(1.04);
-          filter: brightness(.92);
-        }
-        #marquee .slider-videos-wrapper.is-review-hover .background-gradient {
-          opacity: 1;
-        }
-        #marquee .slider-videos-wrapper.is-review-hover .play-button {
-          transform: translate(-50%, -50%) scale(1.14);
-          background-color: rgba(94, 69, 185, .95);
-          box-shadow: 0 14px 32px rgba(94, 69, 185, .32);
-        }
-      }
-      .gp-review-modal {
-        position: fixed;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        background: rgba(10, 10, 14, .76);
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity .25s ease, visibility .25s ease;
-        z-index: 99999;
-      }
-      .gp-review-modal.is-open {
-        opacity: 1;
-        visibility: visible;
-      }
-      .gp-review-modal__dialog {
-        position: relative;
-        width: min(960px, 100%);
-        background: #000;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 24px 80px rgba(0, 0, 0, .45);
-        transform: scale(.96);
-        transition: transform .25s ease;
-      }
-      .gp-review-modal.is-open .gp-review-modal__dialog {
-        transform: scale(1);
-      }
-      .gp-review-modal__close {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        width: 42px;
-        height: 42px;
-        border: 0;
-        border-radius: 999px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255, 255, 255, .14);
-        color: #fff;
-        cursor: pointer;
-        z-index: 2;
-        transition: background-color .2s ease, transform .2s ease;
-      }
-      .gp-review-modal__close:hover {
-        background: rgba(255, 255, 255, .22);
-        transform: scale(1.06);
-      }
-      .gp-review-modal__close:focus-visible {
-        outline: 2px solid #fff;
-        outline-offset: 2px;
-      }
-      .gp-review-modal__icon {
-        font-size: 24px;
-        line-height: 1;
-        transform: translateY(-1px);
-      }
-      .gp-review-modal__video {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        background: #000;
-      }
-      .gp-review-modal__video iframe {
-        width: 100%;
-        height: 100%;
-        border: 0;
-        display: block;
-      }
-    `;
-    document.head.appendChild(style);
-  }
+    .gp-review-modal__icon {
+      font-size: 24px;
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+    .gp-review-modal__video {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+    .gp-review-modal__video iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+  `;
+  document.head.appendChild(style);
   var modal = document.createElement("div");
   modal.className = "gp-review-modal";
   modal.innerHTML = `
@@ -1118,86 +1450,33 @@ window.addEventListener("load", function () {
   var closeButton = modal.querySelector(".gp-review-modal__close");
   var previousHtmlOverflow = "";
   var previousBodyOverflow = "";
+  var lastTrigger = null;
   function closeModal() {
     modal.classList.remove("is-open");
     iframe.src = "";
     document.documentElement.style.overflow = previousHtmlOverflow;
     document.body.style.overflow = previousBodyOverflow;
-    sliderLocked = false;
-    setTimeout(function () {
-      updateHoverStateFromPointer();
-    }, 0);
+    if (lastTrigger) lastTrigger.focus();
   }
   function openModal(url) {
     var embedUrl = toYouTubeEmbed(url);
     if (!embedUrl) return;
-    sliderLocked = true;
     previousHtmlOverflow = document.documentElement.style.overflow;
     previousBodyOverflow = document.body.style.overflow;
     document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
     iframe.src = embedUrl;
     modal.classList.add("is-open");
-  }
-  function getWrapper(node) {
-    return node && node.nodeType === 1
-      ? node.closest(".slider-videos-wrapper")
-      : null;
-  }
-  buildMarquee(false);
-  startTicker();
-  if (canHover) {
-    window.addEventListener("resize", function () {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function () {
-        buildMarquee(true);
-      }, 250);
-    });
-    document.addEventListener(
-      "pointermove",
-      function (event) {
-        lastPointerX = event.clientX;
-        lastPointerY = event.clientY;
-      },
-      { passive: true }
-    );
-    marquee.addEventListener("mouseenter", function () {
-      marqueeHovering = true;
-    });
-    marquee.addEventListener("mouseleave", function () {
-      marqueeHovering = false;
-    });
-    marquee.addEventListener("pointerover", function (event) {
-      var wrapper = getWrapper(event.target);
-      var fromWrapper = getWrapper(event.relatedTarget);
-      if (!wrapper || !marquee.contains(wrapper) || fromWrapper === wrapper) {
-        return;
-      }
-      wrapper.classList.add("is-review-hover");
-    });
-    marquee.addEventListener("pointerout", function (event) {
-      var wrapper = getWrapper(event.target);
-      var toWrapper = getWrapper(event.relatedTarget);
-      if (!wrapper || !marquee.contains(wrapper) || toWrapper === wrapper) {
-        return;
-      }
-      wrapper.classList.remove("is-review-hover");
-    });
-  } else {
-    window.addEventListener("orientationchange", function () {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function () {
-        buildMarquee(true);
-      }, 400);
+    requestAnimationFrame(function () {
+      closeButton.focus();
     });
   }
-  marquee.addEventListener("click", function (event) {
-    var wrapper = getWrapper(event.target);
-    if (!wrapper || !marquee.contains(wrapper)) return;
-    var youtubeUrl = wrapper.getAttribute("youtube-src") || "";
-    if (!youtubeUrl) return;
+  document.addEventListener("click", function (event) {
+    var trigger = event.target.closest && event.target.closest("[youtube-src]");
+    if (!trigger) return;
     event.preventDefault();
-    openModal(youtubeUrl);
+    lastTrigger = trigger;
+    openModal(trigger.getAttribute("youtube-src"));
   });
   closeButton.addEventListener("click", closeModal);
   modal.addEventListener("click", function (event) {
@@ -1246,82 +1525,6 @@ window.addEventListener("load", function () {
 </script>
         <script src="https://kcpggm.csb.app/script.js"></script>
         <script src="https://kcpggm.csb.app/script2.js"></script>
-        <script>
-  window.addEventListener("load", function () {
-    var root = document.querySelector(".gprs-slider");
-    if (!root || typeof Swiper === "undefined") return;
-    var section = root.closest(".gprs-section");
-    var autoAdvanceTimer = null;
-    var hasUserInteracted = false;
-    var swiper = new Swiper(root, {
-      loop: false,
-      speed: 600,
-      centeredSlides: true,
-      slidesPerView: "auto",
-      spaceBetween: 200,
-      grabCursor: true,
-      initialSlide: 2,
-      navigation: {
-        nextEl: ".gprs-next",
-        prevEl: ".gprs-prev"
-      },
-      pagination: {
-        el: ".gprs-pagination",
-        clickable: true
-      }
-    });
-    function stopAutoAdvance() {
-      if (autoAdvanceTimer) {
-        clearInterval(autoAdvanceTimer);
-        autoAdvanceTimer = null;
-      }
-    }
-    function markUserInteracted() {
-      if (hasUserInteracted) return;
-      hasUserInteracted = true;
-      stopAutoAdvance();
-    }
-    function startAutoAdvance() {
-      if (hasUserInteracted || autoAdvanceTimer) return;
-      autoAdvanceTimer = setInterval(function () {
-        if (swiper.isEnd) {
-          swiper.slideTo(0);
-          return;
-        }
-        swiper.slideNext();
-      }, 4000);
-    }
-    root.addEventListener("click", function (event) {
-      var slide = event.target.closest(".swiper-slide");
-      if (!slide || slide.classList.contains("swiper-slide-active")) return;
-      markUserInteracted();
-      swiper.slideTo(Array.prototype.indexOf.call(slide.parentNode.children, slide));
-    });
-    root.addEventListener("pointerdown", markUserInteracted, { once: true });
-    var prevButton = document.querySelector(".gprs-prev");
-    var nextButton = document.querySelector(".gprs-next");
-    var pagination = document.querySelector(".gprs-pagination");
-    if (prevButton) prevButton.addEventListener("click", markUserInteracted, { once: true });
-    if (nextButton) nextButton.addEventListener("click", markUserInteracted, { once: true });
-    if (pagination) pagination.addEventListener("click", markUserInteracted, { once: true });
-    if (section && "IntersectionObserver" in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        var entry = entries[0];
-        if (!entry) return;
-        if (entry.isIntersecting) {
-          startAutoAdvance();
-        } else {
-          stopAutoAdvance();
-        }
-      }, {
-        threshold: 0.35
-      });
-      observer.observe(section);
-    } else {
-      startAutoAdvance();
-    }
-  });
-</script>
         <script src="https://cdn.prod.website-files.com/69b424184efcddaf6ec3d30c%2F689e5ba67671442434f3ca35%2F69b52e16f53334f42b07bef7%2Fteamslider2-1.0.0.js" type="text/javascript"></script>
 </cript></cript></cript></body>
 </html>
