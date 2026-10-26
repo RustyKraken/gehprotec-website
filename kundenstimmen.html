@@ -101,9 +101,9 @@
   position: relative;
   display: block;
   width: 100%;
-  max-width: 30rem;
+  max-width: 34rem;
   justify-self: end;
-  aspect-ratio: 1;
+  aspect-ratio: 5 / 4;
   overflow: hidden;
   padding: 0;
   border: 0;
@@ -273,12 +273,12 @@
 }
 .gp-ks-story {
   display: grid;
-  grid-template-columns: minmax(0, 24rem) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 30rem) minmax(0, 1fr);
   align-items: center;
   gap: 5rem;
 }
 .gp-ks-story:nth-child(even) {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
 }
 .gp-ks-story:nth-child(even) .gp-ks-story_media {
   order: 2;
@@ -287,7 +287,7 @@
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 5 / 6;
+  aspect-ratio: 5 / 4;
   overflow: hidden;
   padding: 0;
   border: 0;
@@ -441,7 +441,7 @@
     gap: 1.75rem;
   }
   .gp-ks-story_media {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 2;
     border-radius: 18px;
     clip-path: inset(0 round 18px);
   }
