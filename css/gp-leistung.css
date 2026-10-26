@@ -316,7 +316,7 @@
 }
 .gp-review {
   display: grid;
-  grid-template-columns: 1fr minmax(0, 26rem);
+  grid-template-columns: 1fr minmax(0, 32rem);
   align-items: center;
   gap: 4rem;
 }
@@ -353,7 +353,7 @@
 }
 .gp-review_media {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 5 / 4;
   overflow: hidden;
   border-radius: 14px;
   background-color: #e9e6f0;
@@ -571,7 +571,7 @@
   }
   .gp-review_media {
     order: -1;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 2;
   }
   .faq-wrapper .uui-faq01_question,
   .faq-wrapper .uui-faq01_answer,
