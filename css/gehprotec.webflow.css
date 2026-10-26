@@ -2140,7 +2140,7 @@ body {
   }
 }
 
-/* CTA-Karte über dem Footer: Vollbild-Foto mit dunklem Verlauf */
+/* CTA-Karte über dem Footer: Fläche in Primärfarbe */
 .gp-cta {
   padding: 2rem 2rem 4rem;
 }
@@ -2153,28 +2153,7 @@ body {
   margin: 0 auto;
   overflow: hidden;
   border-radius: 24px;
-  background-color: #120f1c;
-  isolation: isolate;
-}
-.gp-cta_media {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-}
-.gp-cta_media img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 70% center;
-}
-.gp-cta_card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(90deg, rgba(14, 10, 26, .88) 0%, rgba(14, 10, 26, .7) 38%, rgba(14, 10, 26, .15) 75%, rgba(14, 10, 26, 0) 100%);
+  background-color: var(--primary);
 }
 .gp-cta_content {
   display: flex;
@@ -2194,7 +2173,7 @@ body {
 .gp-cta_text {
   max-width: 30rem;
   margin: 1rem 0 1.75rem;
-  color: rgba(255, 255, 255, .78);
+  color: rgba(255, 255, 255, .85);
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -2244,10 +2223,10 @@ body {
   transition: color .25s;
 }
 .gp-cta_phone svg {
-  color: #b9a8ff;
+  color: #fff;
 }
 .gp-cta_phone:hover {
-  color: #d9d0ff;
+  color: #e4ddff;
 }
 @media screen and (max-width: 991px) {
   .gp-cta_content {
@@ -2261,9 +2240,6 @@ body {
   .gp-cta_card {
     min-height: 0;
     border-radius: 18px;
-  }
-  .gp-cta_card::before {
-    background: linear-gradient(180deg, rgba(14, 10, 26, .6) 0%, rgba(14, 10, 26, .75) 50%, rgba(14, 10, 26, .9) 100%);
   }
   .gp-cta_content {
     padding: 2.75rem 1.5rem;
