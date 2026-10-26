@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /index.__m.html
+Disallow: /__shot.js
+
+Sitemap: https://www.gehprotec.de/sitemap.xml
