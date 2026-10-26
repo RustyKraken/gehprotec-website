@@ -109,8 +109,9 @@
       <div class="gp-about_hero-media">
         <button type="button" class="gp-about_hero-video" youtube-src="https://www.youtube.com/embed/YDZXlpYTqck" aria-label="Video abspielen: GehProTec stellt sich vor">
           <video autoplay muted loop playsinline preload="metadata" poster="images/gehprotec-about-poster.webp" aria-hidden="true">
-            <source src="videos/gehprotec-about-preview-480.mp4" type="video/mp4" media="(max-width: 767px)">
-            <source src="videos/gehprotec-about-preview.mp4" type="video/mp4">
+            <source src="videos/gehprotec-about-preview-540.mp4" type="video/mp4" media="(max-width: 767px)">
+            <source src="videos/gehprotec-about-preview-1080.mp4" type="video/mp4" media="(min-width: 1440px), (min-width: 1024px) and (min-resolution: 2dppx)">
+            <source src="videos/gehprotec-about-preview-720.mp4" type="video/mp4">
           </video>
           <span class="gp-about_hero-play"><svg viewbox="0 0 14 15" fill="none" aria-hidden="true"><path d="M12.3667 6.25743C13.2709 6.8116 13.2709 8.1241 12.3667 8.67827L2.1 14.7449C1.16667 15.2991 0 14.6283 0 13.5199V1.3866C0 0.190766 1.25417 -0.305067 2.1 0.190766L12.3667 6.25743Z" fill="currentColor"></path></svg></span>
         </button>
@@ -519,15 +520,23 @@
   <script src="js/gp-scroll.js?v=10" type="text/javascript"></script>
   <script src="js/gp-video-modal.js" type="text/javascript"></script>
   <script>
-/* Vorschau nicht abspielen bei reduzierter Bewegung oder Datensparmodus */
+/* Vorschau nicht abspielen bei reduzierter Bewegung oder Datensparmodus,
+   bei langsamer Verbindung immer die kleinste Version laden */
 (function () {
   var video = document.querySelector(".gp-about_hero-video video");
   if (!video) return;
-  var saveData = navigator.connection && navigator.connection.saveData;
-  if (saveData || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  var connection = navigator.connection || {};
+  if (connection.saveData || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     video.removeAttribute("autoplay");
     video.preload = "none";
     video.pause();
+    return;
+  }
+  if (/(^|-)2g$|^3g$/.test(connection.effectiveType || "") && video.currentSrc.indexOf("-540.mp4") === -1) {
+    video.src = "videos/gehprotec-about-preview-540.mp4";
+    video.load();
+    var playing = video.play();
+    if (playing && playing.catch) playing.catch(function () {});
   }
 })();
 </script>
